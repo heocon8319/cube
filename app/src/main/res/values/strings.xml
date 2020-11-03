@@ -38,10 +38,10 @@
     <string name="screen_email_register_text_certification_phone">휴대폰 인증</string>
 
     //NickName
-    <string name="screen_nick_name_text_nick_name">닉네임을 입력해주세요</string>
+    <string name="screen_nick_name_text_title">닉네임을 입력해주세요</string>
 
     //BabyName
-    <string name="screen_baby_name_text_baby_name">아기 이름을 입력해주세요</string>
+    <string name="screen_baby_name_text_title">아기 이름을 입력해주세요</string>
 
     //MainTerm
     <string name="screen_main_term_text_term_use">이용약관</string>
@@ -50,25 +50,31 @@
     <string name="screen_main_term_text_collection_use_info_required">개인정보 수집 및 이용 동의 (필수)</string>
 
     //Gender
-    <string name="screen_gender_text_choose_gender">아기 성별을 입력해주세요</string>
+    <string name="screen_gender_text_title">아기 성별을 입력해주세요</string>
 
     //Day of birth
-    <string name="screen_dob_text_choose_dob">아기 생일을 입력해주세요</string>
+    <string name="screen_dob_text_title">아기 생일을 입력해주세요</string>
 
     //Baby Height
-    <string name="screen_baby_height_text_baby_height">아기 신장을 입력해주세요</string>
+    <string name="screen_baby_height_text_title">아기 신장을 입력해주세요</string>
 
     //Baby Weight
-    <string name="screen_baby_weight_text_baby_weight">아기 몸무게를 입력해주세요</string>
+    <string name="screen_baby_weight_text_title">아기 몸무게를 입력해주세요</string>
 
     //Baby Avatar
-    <string name="screen_baby_avatar_text_avatar">아기 사진을 설정해주세요</string>
+    <string name="screen_baby_avatar_text_title">아기 사진을 설정해주세요</string>
 
     //Good Ingredients
-    <string name="screen_good_ingredients_title">아기가 섭취 가능한 식재료는 무엇인가요?</string>
+    <string name="screen_good_ingredients_text_title">아기가 섭취 가능한 식재료는 무엇인가요?</string>
 
     //Adverse Ingredients
-    <string name="screen_adverse_ingredients_title">이상반응이 있는 식재료는 무엇인가요?</string>
+    <string name="screen_adverse_ingredients_text_title">이상반응이 있는 식재료는 무엇인가요?</string>
+
+    //Baby Health
+    <string name="screen_baby_health_text_title">아기가 현재 갖고있는 특이사항이 있나요?</string>
+    <string name="screen_baby_health_text_stomach">변비</string>
+    <string name="screen_baby_health_text_thermometer">감기</string>
+    <string name="screen_baby_health_text_toilet">설사</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

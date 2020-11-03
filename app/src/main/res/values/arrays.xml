@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="ingredients">
-            <item>가지</item>
-            <item>감자</item>
-            <item>당근</item>
-            <item>망고</item>
-            <item>가지</item>
-            <item>감자</item>
-            <item>당근</item>
-            <item>망고</item>
-            <item>가지</item>
-            <item>감자</item>
-            <item>당근</item>
-            <item>망고</item>
-            <item>가지</item>
-            <item>감자</item>
-            <item>당근</item>
-            <item>망고</item>
+    <string-array name="arrayIngredients">
+        <item>가지</item>
+        <item>감자</item>
+        <item>당근</item>
+        <item>망고</item>
+        <item>가지</item>
+        <item>감자</item>
+        <item>당근</item>
+        <item>망고</item>
+        <item>가지</item>
+        <item>감자</item>
+        <item>당근</item>
+        <item>망고</item>
+        <item>가지</item>
+        <item>감자</item>
+        <item>당근</item>
+        <item>망고</item>
 
     </string-array>
 </resources>

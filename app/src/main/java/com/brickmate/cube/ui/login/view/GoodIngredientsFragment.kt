@@ -1,6 +1,7 @@
 package com.brickmate.cube.ui.login.view
 
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
@@ -26,11 +27,18 @@ class GoodIngredientsFragment : BaseFragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var data = ArrayList<Ingredient>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+        }
+        // load foods
+        var ingredients = resources.getStringArray(R.array.arrayIngredients)
+        for (element in ingredients) {
+            data.add(Ingredient(element, false))
         }
     }
 
@@ -46,22 +54,16 @@ class GoodIngredientsFragment : BaseFragment() {
     private fun initView() {
         showArrow()
         showBackground()
-        tvTitle.text = getString(R.string.screen_good_ingredients_title)
+        gvGoodIngredients.visibility = View.VISIBLE
+        gvAdverseIngredients.visibility = View.GONE
+        tvTitle.text = getString(R.string.screen_good_ingredients_text_title)
     }
 
     private fun initData() {
-        var ingredients = resources.getStringArray(R.array.ingredients)
-
-        // load foods
-        var data = ArrayList<Ingredient>()
-        for (element in ingredients) {
-            data.add(Ingredient(element, false))
-        }
-
         var adapter = IngredientsAdapter(data)
 
-        gvIngredients.adapter = adapter
-        gvIngredients.setOnItemClickListener { parent, v, position, id ->
+        gvGoodIngredients.adapter = adapter
+        gvGoodIngredients.setOnItemClickListener { parent, v, position, id ->
             var selectedItem = data[position]
             selectedItem.isSelected = !selectedItem.isSelected
 

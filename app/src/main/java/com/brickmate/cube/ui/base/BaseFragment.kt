@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.AppConstants
 import com.brickmate.cube.R
+import com.brickmate.cube.ui.login.LoginActivity
 import com.brickmate.cube.utils.replaceFragment
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.layout_navigation_background.clNavigation
@@ -59,13 +60,15 @@ abstract class BaseFragment : Fragment(), AppConstants {
     private fun progressStatus(viewStatus: Int) =
         with(activity) { if (this is BaseActivity) this.clProgressBar.visibility = viewStatus }
 
+    /* Login Activity */
+
     //Arrow Navigation
     internal fun showArrow() = arrowStatus(View.VISIBLE)
 
     internal fun hideArrow() = arrowStatus(View.GONE)
 
     private fun arrowStatus(viewStatus: Int) =
-        with(activity) { if (this is BaseActivity) this.clNavigation.visibility = viewStatus }
+        with(activity) { if (this is LoginActivity) this.clNavigation.visibility = viewStatus }
 
     //Image Background
     internal fun showBackground() = backgroundStatus(View.VISIBLE)
@@ -73,6 +76,8 @@ abstract class BaseFragment : Fragment(), AppConstants {
     internal fun hideBackground() = backgroundStatus(View.GONE)
 
     private fun backgroundStatus(viewStatus: Int) =
-        with(activity) { if (this is BaseActivity) this.ivBackground.visibility = viewStatus }
+        with(activity) { if (this is LoginActivity) this.ivBackground.visibility = viewStatus }
+
+    /* Main Activity */
 
 }

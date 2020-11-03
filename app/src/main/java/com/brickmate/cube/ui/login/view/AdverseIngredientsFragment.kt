@@ -1,12 +1,14 @@
 package com.brickmate.cube.ui.login.view
 
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
 import com.brickmate.cube.model.Ingredient
 import com.brickmate.cube.ui.base.BaseFragment
 import com.brickmate.cube.ui.login.adapter.IngredientsAdapter
+import com.brickmate.cube.utils.TAG
 import kotlinx.android.synthetic.main.fragment_ingredients.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,11 +26,18 @@ class AdverseIngredientsFragment : BaseFragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var data = ArrayList<Ingredient>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+        }
+        // load foods
+        var ingredients = resources.getStringArray(R.array.arrayIngredients)
+        for (element in ingredients) {
+            data.add(Ingredient(element, false))
         }
     }
 
@@ -44,22 +53,16 @@ class AdverseIngredientsFragment : BaseFragment() {
     private fun initView() {
         showArrow()
         showBackground()
-        tvTitle.text = getString(R.string.screen_adverse_ingredients_title)
+        gvGoodIngredients.visibility = View.GONE
+        gvAdverseIngredients.visibility = View.VISIBLE
+        tvTitle.text = getString(R.string.screen_adverse_ingredients_text_title)
     }
 
     private fun initData() {
-        var ingredients = resources.getStringArray(R.array.ingredients)
-
-        // load foods
-        var data = ArrayList<Ingredient>()
-        for (element in ingredients) {
-            data.add(Ingredient(element, false))
-        }
-
         var adapter = IngredientsAdapter(data)
 
-        gvIngredients.adapter = adapter
-        gvIngredients.setOnItemClickListener { parent, v, position, id ->
+        gvAdverseIngredients.adapter = adapter
+        gvAdverseIngredients.setOnItemClickListener { parent, v, position, id ->
             var selectedItem = data[position]
             selectedItem.isSelected = !selectedItem.isSelected
 
@@ -73,8 +76,8 @@ class AdverseIngredientsFragment : BaseFragment() {
 
     override fun onNextArrowPressed() {
         super.onNextArrowPressed()
-//        val fragDes = AdverseIngredientsFragment.newInstance()
-//        navigateToFragment(fragDes, fragDes.TAG())
+        val fragDes = BabyHealthFragment.newInstance()
+        navigateToFragment(fragDes, fragDes.TAG())
     }
 
     companion object {
