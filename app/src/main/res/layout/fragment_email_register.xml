@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/height_100"
+    tools:context=".ui.login.view.EmailRegisterFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/tvEmailAddress"
+        style="@style/Title_Medium_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/screen_email_login_text_email_address"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edEmailAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/margin_20"
+        android:paddingVertical="@dimen/margin_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEmailAddress"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/tvPassword"
+        style="@style/Title_Medium_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/screen_email_login_text_password"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edEmailAddress" />
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/margin_20"
+        android:paddingVertical="@dimen/margin_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/tvRepeatPassword"
+        style="@style/Title_Medium_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/screen_email_register_text_repeat_password"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edPassword" />
+
+    <EditText
+        android:id="@+id/edRepeatPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/margin_20"
+        android:paddingVertical="@dimen/margin_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRepeatPassword"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <LinearLayout
+        android:id="@+id/llRegisterByEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edRepeatPassword"
+        app:layout_constraintWidth_percent="0.8">
+
+        <TextView
+            style="@style/Title_Medium_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/screen_email_register_text_certification_phone"
+            android:textColor="@color/dark_gray"></TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:src="@drawable/ic_arrow_next" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

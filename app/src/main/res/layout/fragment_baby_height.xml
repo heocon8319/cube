@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.view.BabyHeightFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:background="@drawable/bg_baby_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Title_Medium_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/height_150"
+        android:text="@string/screen_baby_height_text_baby_height"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edBabyHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/margin_20"
+        android:paddingVertical="@dimen/margin_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        style="@style/Title_Medium_18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:text="@string/cm_text"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/edBabyHeight"
+        app:layout_constraintLeft_toRightOf="@id/edBabyHeight"
+        app:layout_constraintTop_toTopOf="@id/edBabyHeight" />
+</androidx.constraintlayout.widget.ConstraintLayout>

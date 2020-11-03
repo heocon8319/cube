@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/height_100"
+    tools:context=".ui.login.view.MainTermFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tvTermUse"
+        style="@style/Title_Medium_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/screen_main_term_text_term_use"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTermUseExpand"
+        style="@style/Title_Medium_16"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_170"
+        android:background="@drawable/bg_large_edit_text"
+        android:paddingVertical="@dimen/margin_5"
+        android:paddingLeft="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_5"
+        android:scrollbars="vertical"
+        android:text="@string/term_of_use_text"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTermUse"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <CheckBox
+        android:id="@+id/cbTermUse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_20"
+        android:button="@drawable/bg_check_box_term"
+        app:layout_constraintLeft_toLeftOf="@id/tvTermUseExpand"
+        app:layout_constraintTop_toBottomOf="@id/tvTermUseExpand" />
+
+    <TextView
+        android:id="@+id/tvCBTermUse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:text="@string/screen_main_term_text_term_use_required"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/cbTermUse"
+        app:layout_constraintLeft_toLeftOf="@id/cbTermUse"
+        app:layout_constraintTop_toTopOf="@id/cbTermUse" />
+
+    <TextView
+        android:id="@+id/tvCollectUse"
+        style="@style/Title_Medium_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/screen_main_term_text_collection_use_info"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cbTermUse" />
+
+    <TextView
+        android:id="@+id/tvCollectUseExpand"
+        style="@style/Title_Medium_16"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_170"
+        android:background="@drawable/bg_large_edit_text"
+        android:paddingVertical="@dimen/margin_5"
+        android:paddingLeft="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_5"
+        android:scrollbars="vertical"
+        android:text="@string/term_of_use_text"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCollectUse"
+        app:layout_constraintWidth_percent="0.85" />
+
+    <CheckBox
+        android:id="@+id/cbCollectUse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_20"
+        android:button="@drawable/bg_check_box_term"
+        app:layout_constraintLeft_toLeftOf="@id/tvCollectUseExpand"
+        app:layout_constraintTop_toBottomOf="@id/tvCollectUseExpand" />
+
+    <TextView
+        android:id="@+id/tvCBCollectUse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:text="@string/screen_main_term_text_collection_use_info_required"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/cbCollectUse"
+        app:layout_constraintLeft_toLeftOf="@id/cbCollectUse"
+        app:layout_constraintTop_toTopOf="@id/cbCollectUse" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

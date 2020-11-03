@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.view.EmailLoginFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTop"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvSlogan"
+            style="@style/Title_Bold_25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slogan_text"
+            android:textColor="@color/jungle_green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_top"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEmailAddress"
+        style="@style/Title_Medium_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/screen_email_login_text_email_address"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/clTop"
+        app:layout_constraintRight_toRightOf="@id/clTop"
+        app:layout_constraintTop_toBottomOf="@id/clTop" />
+
+    <EditText
+        android:id="@+id/edEmailAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:inputType="textEmailAddress"
+        android:paddingVertical="@dimen/margin_5"
+        android:paddingHorizontal="@dimen/margin_20"
+        android:maxLines="1"
+        app:layout_constraintLeft_toLeftOf="@id/clTop"
+        app:layout_constraintRight_toRightOf="@id/clTop"
+        app:layout_constraintTop_toBottomOf="@id/tvEmailAddress"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/tvPassword"
+        style="@style/Title_Medium_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/screen_email_login_text_password"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/clTop"
+        app:layout_constraintRight_toRightOf="@id/clTop"
+        app:layout_constraintTop_toBottomOf="@id/edEmailAddress" />
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_text"
+        android:inputType="textPassword"
+        android:paddingVertical="@dimen/margin_5"
+        android:paddingHorizontal="@dimen/margin_20"
+        android:maxLines="1"
+        app:layout_constraintLeft_toLeftOf="@id/clTop"
+        app:layout_constraintRight_toRightOf="@id/clTop"
+        app:layout_constraintTop_toBottomOf="@id/tvPassword"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/tvForgotPassword"
+        style="@style/Title_Medium_18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/screen_email_login_text_forgot_password"
+        android:textColor="@color/dark_gray"
+        app:layout_constraintLeft_toLeftOf="@id/clTop"
+        app:layout_constraintRight_toRightOf="@id/clTop"
+        app:layout_constraintTop_toBottomOf="@id/edPassword" />
+
+    <TextView
+        style="@style/Title_Medium_18"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/app_name_text"
+        android:textColor="@color/dark_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintLeft_toLeftOf="@id/clTop"
+        app:layout_constraintRight_toRightOf="@id/clTop" />
+</androidx.constraintlayout.widget.ConstraintLayout>

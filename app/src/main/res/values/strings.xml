@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Common
+    <string name="app_name">Cube</string>
+    <string name="progress_bar_text">Please wait...</string>
+    <string name="slogan_text">이유식이 똑똑해지다</string>
+    <string name="app_name_text">큐브</string>
+    <string name="kg_text">Kg</string>
+    <string name="cm_text">cm</string>
+    <string name="ml_text">ml</string>
+    <string name="term_of_use_text">본 약관에서 사용되는 주요한 용어의 정의는 다음과 같습니다.\n
+        \n &#9312; 회원 : 사이트의 약관에 동의하고 개인정보를 제공하여 회원등록을 한 자로서, 사이트와의 이용계약을 체결하고 사이트를 이용하는 이용자를 말합니다.
+        \n &#9313; 이용계약 : 사이트 이용과 관련하여 사이트와 회원간에 체결 하는.
+    </string>
+
+    <string name="developing_text">Developing</string>
+    <string name="required_text">Required</string>
+
+
+    //MainLogin
+    <string name="screen_main_login_text_login_with_email">Email로 로그인</string>
+    <string name="screen_main_login_text_login_with_naver">네이버로 시작하기</string>
+    <string name="screen_main_login_text_login_with_kakao">카카오로 시작</string>
+    <string name="screen_main_login_text_login_with_apple">APPLE Login</string>
+    <string name="screen_main_login_text_register_with_email">Email로 회원가입</string>
+
+    //EmailLogin
+    <string name="screen_email_login_text_email_address">이메일 주소</string>
+    <string name="screen_email_login_text_password">password</string>
+    <string name="screen_email_login_text_forgot_password">비밀번호를 잊으셨습니까?</string>
+
+    //EmailForgotPassword
+    <string name="screen_email_forgot_password_text_email">비밀번호 재설정을 위해 이메일 주소를 입력하세요</string>
+    <string name="screen_email_forgot_password_text_reset">재설정요</string>
+
+    //EmailRegister
+    <string name="screen_email_register_text_repeat_password">password 재입력</string>
+    <string name="screen_email_register_text_certification_phone">휴대폰 인증</string>
+
+    //NickName
+    <string name="screen_nick_name_text_nick_name">닉네임을 입력해주세요</string>
+
+    //BabyName
+    <string name="screen_baby_name_text_baby_name">아기 이름을 입력해주세요</string>
+
+    //MainTerm
+    <string name="screen_main_term_text_term_use">이용약관</string>
+    <string name="screen_main_term_text_term_use_required">이용약관 동의 (필수)</string>
+    <string name="screen_main_term_text_collection_use_info">개인정보 수집 및 이용</string>
+    <string name="screen_main_term_text_collection_use_info_required">개인정보 수집 및 이용 동의 (필수)</string>
+
+    //Gender
+    <string name="screen_gender_text_choose_gender">아기 성별을 입력해주세요</string>
+
+    //Day of birth
+    <string name="screen_dob_text_choose_dob">아기 생일을 입력해주세요</string>
+
+    //Baby Height
+    <string name="screen_baby_height_text_baby_height">아기 신장을 입력해주세요</string>
+
+    //Baby Weight
+    <string name="screen_baby_weight_text_baby_weight">아기 몸무게를 입력해주세요</string>
+
+    //Baby Avatar
+    <string name="screen_baby_avatar_text_avatar">아기 사진을 설정해주세요</string>
+
+    //Good Ingredients
+    <string name="screen_good_ingredients_title">아기가 섭취 가능한 식재료는 무엇인가요?</string>
+
+    //Adverse Ingredients
+    <string name="screen_adverse_ingredients_title">이상반응이 있는 식재료는 무엇인가요?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
