@@ -10,6 +10,5 @@ data class User(
     val userName : String = "",
     val babyName : String = "",
     val babyGender : String = "",
-
     val age : Int = 0
 ) : Parcelable

@@ -4,12 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_main_large"
     tools:context=".ui.main.MainActivity">
 
     <include
         android:id="@+id/clProgressBar"
         layout="@layout/layout_progress_bar"
         android:visibility="gone" />
+
+    <include
+        android:id="@+id/abMain"
+        layout="@layout/layout_action_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/abSub"
+        layout="@layout/layout_action_bar_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clContainer"
@@ -26,9 +51,9 @@
         android:layout_height="wrap_content"
         android:background="@color/bg_navigation_bar"
         app:itemBackground="@color/bg_navigation_bar"
+        app:itemIconSize="@dimen/icon_menu"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:itemIconSize="@dimen/height_40"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

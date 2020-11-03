@@ -12,7 +12,7 @@
         style="@style/Title_Medium_20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/height_150"
+        android:layout_marginTop="@dimen/margin_top_title"
         android:text="@string/screen_dob_text_title"
         android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"

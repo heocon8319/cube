@@ -13,6 +13,7 @@
     <color name="golden_yellow">#FEE500</color>
     <color name="silver">#C0C0C0</color>
     <color name="dark_gray">#A9A9A9</color>
-    <color name="background">#E5E5E5</color>
-    <color name="bg_navigation_bar">#E5E5E5</color>
+    <color name="background">#F6F6F6</color>
+    <color name="bg_navigation_bar">#FFE7D0</color>
+    <color name="tahiti_gold">#F0830A</color>
 </resources>

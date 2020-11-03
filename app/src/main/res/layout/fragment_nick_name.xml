@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/height_100"
+    android:paddingTop="@dimen/margin_small_top_title"
     tools:context=".ui.login.view.NickNameFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_edit_text"
         android:maxLines="1"
-        android:paddingHorizontal="@dimen/margin_20"
-        android:paddingVertical="@dimen/margin_5"
+        android:paddingHorizontal="@dimen/margin_normal"
+        android:paddingVertical="@dimen/margin_tiny"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"

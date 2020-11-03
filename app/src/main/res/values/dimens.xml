@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="height_40">40dp</dimen>
-    <dimen name="height_50">50dp</dimen>
-    <dimen name="height_70">70dp</dimen>
-    <dimen name="height_100">100dp</dimen>
-    <dimen name="height_150">150dp</dimen>
-    <dimen name="height_170">170dp</dimen>
-    <dimen name="height_200">200dp</dimen>
 
+    //Margin Padding
+    <dimen name="margin_top_title">150dp</dimen>
+    <dimen name="margin_small_top_title">150dp</dimen>
+    <dimen name="margin_bottom_avatar">70dp</dimen>
+    <dimen name="margin_normal">20dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_big">40dp</dimen>
+    <dimen name="margin_tiny">5dp</dimen>
 
-    <dimen name="margin_5">5dp</dimen>
-    <dimen name="margin_10">10dp</dimen>
-    <dimen name="margin_20">20dp</dimen>
-    <dimen name="margin_30">30dp</dimen>
-    <dimen name="margin_40">40dp</dimen>
-    <dimen name="margin_50">50dp</dimen>
+    //Height Width
+    <dimen name="icon_menu">40dp</dimen>
+    <dimen name="img_avatar">170dp</dimen>
+    <dimen name="icon_avatar">50dp</dimen>
+    <dimen name="item_gird_ingredient">70dp</dimen>
+    <dimen name="text_view_expand">170dp</dimen>
+    <dimen name="button_width">70dp</dimen>
+    <dimen name="button_height">35dp</dimen>
+
 </resources>
