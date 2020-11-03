@@ -25,8 +25,10 @@ abstract class BaseFragment : Fragment(), AppConstants {
         savedInstanceState: Bundle?
     ): View? {
         hideProgress()
+        //Login
         hideArrow()
         hideBackground()
+        //Main
         return inflater.inflate(layoutId(), container, false)
     }
 

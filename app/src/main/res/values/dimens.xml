@@ -15,6 +15,7 @@
     <dimen name="img_avatar">170dp</dimen>
     <dimen name="icon_avatar">50dp</dimen>
     <dimen name="item_gird_ingredient">70dp</dimen>
+    <dimen name="item_row_calendar">50dp</dimen>
     <dimen name="text_view_expand">170dp</dimen>
     <dimen name="button_width">70dp</dimen>
     <dimen name="button_height">35dp</dimen>

@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.brickmate.cube"
-        minSdkVersion 19
+        minSdkVersion 21//19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -63,7 +63,11 @@ dependencies {
     /* Glide lib for image loading  */
     implementation 'com.github.bumptech.glide:glide:4.11.0'
 
+    /* Crop Image*/
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+    /* Calendar Row*/
+    implementation 'com.michalsvec:single-row-calednar:1.0.0'
 
     /* Android Architecture Component - Room Persistence Lib  */
 //    implementation 'android.arch.persistence.room:runtime:1.1.1'

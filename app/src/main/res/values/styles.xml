@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Title_Bold_25">
         <item name="android:fontFamily">@font/notosanskr_bold</item>
         <item name="android:textSize">25dp</item>
@@ -28,6 +29,11 @@
     <style name="Title_Medium_16">
         <item name="android:fontFamily">@font/notosanskr_medium</item>
         <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="Title_Medium_14">
+        <item name="android:fontFamily">@font/notosanskr_medium</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
     <style name="Title_Medium_12">
