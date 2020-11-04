@@ -15,12 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cube.NoActionBar">
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:theme="@style/Theme.Cube.NoActionBar.FullScreen">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            android:name=".ui.login.LoginActivity">
+<!--            android:theme="@style/Theme.Cube.NoActionBar.FullScreen">-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -28,11 +28,11 @@
             android:theme="@style/Base.Theme.AppCompat" />
 
         <activity android:name=".ui.main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
     </application>

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="@dimen/item_row_calendar"
-    android:layout_height="wrap_content">
+    android:layout_width="@dimen/item_row_calendar_width"
+    android:layout_height="@dimen/item_row_calendar_height"
+    android:layout_marginRight="@dimen/margin_small">
 
     <TextView
-        android:id="@+id/tvDate"
-        style="@style/Title_Medium_14"
+        android:id="@+id/tvDay"
+        style="@style/Title_Medium_12"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/item_row_calendar_text"
         android:text="MON"
         android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -16,14 +17,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvDay"
-        style="@style/Title_Medium_14"
+        android:id="@+id/tvDate"
+        style="@style/Title_Medium_12"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/item_row_calendar_text"
+        android:layout_marginBottom="@dimen/margin_tiny"
         android:text="30"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDate" />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

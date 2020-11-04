@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.brickmate.cube"
-        minSdkVersion 21//19
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -49,6 +49,8 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    implementation 'com.github.vivchar:RendererRecyclerViewAdapter:3.0.0'
+
     /* Retrofit using RxJava2, Okhttp logging interceptor, Gson  */
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
@@ -66,8 +68,7 @@ dependencies {
     /* Crop Image*/
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 
-    /* Calendar Row*/
-    implementation 'com.michalsvec:single-row-calednar:1.0.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     /* Android Architecture Component - Room Persistence Lib  */
 //    implementation 'android.arch.persistence.room:runtime:1.1.1'
@@ -75,6 +76,7 @@ dependencies {
 //    kapt 'android.arch.persistence.room:compiler:1.1.1'
     implementation "androidx.room:room-runtime:$room_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.0.0'
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
