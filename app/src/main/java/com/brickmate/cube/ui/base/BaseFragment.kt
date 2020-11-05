@@ -11,7 +11,6 @@ import com.brickmate.cube.R
 import com.brickmate.cube.ui.login.LoginActivity
 import com.brickmate.cube.utils.replaceFragment
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.layout_navigation_background.clNavigation
 
 abstract class BaseFragment : Fragment(), AppConstants {
 
@@ -42,14 +41,12 @@ abstract class BaseFragment : Fragment(), AppConstants {
     open fun onNextArrowPressed() {}
 
     internal fun navigateToFragment(fragDes: BaseFragment, tag: String) {
-        fragDes?.let {
-            replaceFragment(
-                R.id.clContainer,
-                it,
-                true,
-                tag
-            )
-        }
+        replaceFragment(
+            R.id.clContainer,
+            fragDes,
+            true,
+            tag
+        )
     }
 
     internal fun firstTimeCreated(savedInstanceState: Bundle?) = savedInstanceState == null

@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/tvDay"
-        style="@style/Title_Medium_12"
+        style="@style/title_medium"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_row_calendar_text"
         android:gravity="center"
@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/tvDate"
-        style="@style/Title_Medium_12"
+        style="@style/title_medium"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_row_calendar_text"
         android:layout_marginBottom="@dimen/margin_tiny"

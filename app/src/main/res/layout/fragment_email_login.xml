@@ -18,11 +18,12 @@
 
         <TextView
             android:id="@+id/tvSlogan"
-            style="@style/Title_Bold_25"
+            style="@style/title_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/slogan_text"
             android:textColor="@color/jungle_green"
+            android:textSize="@dimen/logo_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -38,12 +39,12 @@
 
     <TextView
         android:id="@+id/tvEmailAddress"
-        style="@style/Title_Medium_20"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:text="@string/screen_email_login_text_email_address"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_size"
         app:layout_constraintLeft_toLeftOf="@id/clTop"
         app:layout_constraintRight_toRightOf="@id/clTop"
         app:layout_constraintTop_toBottomOf="@id/clTop" />
@@ -54,9 +55,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_edit_text"
         android:inputType="textEmailAddress"
-        android:paddingVertical="@dimen/margin_tiny"
-        android:paddingHorizontal="@dimen/margin_normal"
         android:maxLines="1"
+        android:paddingHorizontal="@dimen/margin_normal"
+        android:paddingVertical="@dimen/margin_tiny"
         app:layout_constraintLeft_toLeftOf="@id/clTop"
         app:layout_constraintRight_toRightOf="@id/clTop"
         app:layout_constraintTop_toBottomOf="@id/tvEmailAddress"
@@ -64,13 +65,13 @@
 
     <TextView
         android:id="@+id/tvPassword"
-        style="@style/Title_Medium_20"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:text="@string/screen_email_login_text_password"
         android:textAllCaps="true"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_size"
         app:layout_constraintLeft_toLeftOf="@id/clTop"
         app:layout_constraintRight_toRightOf="@id/clTop"
         app:layout_constraintTop_toBottomOf="@id/edEmailAddress" />
@@ -81,9 +82,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_edit_text"
         android:inputType="textPassword"
-        android:paddingVertical="@dimen/margin_tiny"
-        android:paddingHorizontal="@dimen/margin_normal"
         android:maxLines="1"
+        android:paddingHorizontal="@dimen/margin_normal"
+        android:paddingVertical="@dimen/margin_tiny"
         app:layout_constraintLeft_toLeftOf="@id/clTop"
         app:layout_constraintRight_toRightOf="@id/clTop"
         app:layout_constraintTop_toBottomOf="@id/tvPassword"
@@ -91,21 +92,23 @@
 
     <TextView
         android:id="@+id/tvForgotPassword"
-        style="@style/Title_Medium_18"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/screen_email_login_text_forgot_password"
         android:textColor="@color/dark_gray"
+        android:textSize="@dimen/title_small_size"
         app:layout_constraintLeft_toLeftOf="@id/clTop"
         app:layout_constraintRight_toRightOf="@id/clTop"
         app:layout_constraintTop_toBottomOf="@id/edPassword" />
 
     <TextView
-        style="@style/Title_Medium_18"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="@string/app_name_text"
         android:textColor="@color/dark_gray"
+        android:textSize="@dimen/title_small_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintLeft_toLeftOf="@id/clTop"

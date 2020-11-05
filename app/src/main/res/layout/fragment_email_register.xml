@@ -4,21 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/margin_small_top_title"
     tools:context=".ui.login.view.EmailRegisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
     <TextView
         android:id="@+id/tvEmailAddress"
-        style="@style/Title_Medium_20"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/screen_email_login_text_email_address"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/glTop" />
 
     <EditText
         android:id="@+id/edEmailAddress"
@@ -36,13 +43,14 @@
 
     <TextView
         android:id="@+id/tvPassword"
-        style="@style/Title_Medium_20"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/screen_email_login_text_password"
         android:textAllCaps="true"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edEmailAddress" />
@@ -63,13 +71,14 @@
 
     <TextView
         android:id="@+id/tvRepeatPassword"
-        style="@style/Title_Medium_20"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/screen_email_register_text_repeat_password"
         android:textAllCaps="true"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edPassword" />
@@ -99,12 +108,13 @@
         app:layout_constraintWidth_percent="0.8">
 
         <TextView
-            style="@style/Title_Medium_18"
+            style="@style/title_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_email_register_text_certification_phone"
-            android:textColor="@color/dark_gray"/>
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/title_small_size"/>
 
         <ImageView
             android:layout_width="wrap_content"

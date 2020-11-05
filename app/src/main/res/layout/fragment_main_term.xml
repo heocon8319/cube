@@ -4,26 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/margin_small_top_title"
     tools:context=".ui.login.view.MainTermFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
     <TextView
         android:id="@+id/tvTermUse"
-        style="@style/Title_Medium_20"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/screen_main_term_text_term_use"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_small_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/glTop" />
 
     <TextView
         android:id="@+id/tvTermUseExpand"
-        style="@style/Title_Medium_16"
+        style="@style/title_medium"
         android:layout_width="0dp"
-        android:layout_height="@dimen/text_view_expand"
+        android:layout_height="0dp"
         android:background="@drawable/bg_large_edit_text"
         android:paddingVertical="@dimen/margin_tiny"
         android:paddingLeft="@dimen/margin_small"
@@ -31,10 +38,12 @@
         android:scrollbars="vertical"
         android:text="@string/term_of_use_text"
         android:textColor="@color/black"
+        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTermUse"
-        app:layout_constraintWidth_percent="0.85" />
+        app:layout_constraintWidth_percent="0.8" />
+
 
     <CheckBox
         android:id="@+id/cbTermUse"
@@ -58,20 +67,21 @@
 
     <TextView
         android:id="@+id/tvCollectUse"
-        style="@style/Title_Medium_20"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/screen_main_term_text_collection_use_info"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_small_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cbTermUse" />
 
     <TextView
         android:id="@+id/tvCollectUseExpand"
-        style="@style/Title_Medium_16"
+        style="@style/title_medium"
         android:layout_width="0dp"
-        android:layout_height="@dimen/text_view_expand"
+        android:layout_height="0dp"
         android:background="@drawable/bg_large_edit_text"
         android:paddingVertical="@dimen/margin_tiny"
         android:paddingLeft="@dimen/margin_small"
@@ -79,6 +89,7 @@
         android:scrollbars="vertical"
         android:text="@string/term_of_use_text"
         android:textColor="@color/black"
+        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCollectUse"

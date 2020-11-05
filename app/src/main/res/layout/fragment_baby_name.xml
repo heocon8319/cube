@@ -4,20 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/margin_small_top_title"
     tools:context=".ui.login.view.BabyNameFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
     <TextView
         android:id="@+id/tvTitle"
-        style="@style/Title_Medium_20"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/screen_baby_name_text_title"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/glTop" />
 
     <EditText
         android:id="@+id/edBabyName"

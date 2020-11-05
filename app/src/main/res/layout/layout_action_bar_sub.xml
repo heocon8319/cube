@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="@dimen/margin_small">
+    android:paddingHorizontal="@dimen/margin_normal">
 
     <ImageView
         android:id="@+id/ivArrowBack"
@@ -16,10 +16,12 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        style="@style/Title_Medium_18"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
+        android:textSize="@dimen/title_small_size"
+        android:text="Title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -27,10 +29,12 @@
 
     <TextView
         android:id="@+id/tvRightTitle"
-        style="@style/Title_Medium_18"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
+        android:textSize="@dimen/title_small_size"
+        android:text="Close"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -48,12 +52,13 @@
 
         <TextView
             android:id="@+id/tvTitleButton"
-            style="@style/Title_Medium_12"
+            style="@style/title_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="완료"
             android:textAlignment="center"
+            android:textSize="@dimen/button_size"
             android:textColor="@color/tahiti_gold" />
     </RelativeLayout>
 

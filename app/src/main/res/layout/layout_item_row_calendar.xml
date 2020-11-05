@@ -7,23 +7,25 @@
 
     <TextView
         android:id="@+id/tvDay"
-        style="@style/Title_Medium_12"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/item_row_calendar_text"
         android:text="MON"
         android:textColor="@color/black"
+        android:textSize="@dimen/row_calendar_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvDate"
-        style="@style/Title_Medium_12"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/item_row_calendar_text"
         android:layout_marginBottom="@dimen/margin_tiny"
         android:text="30"
         android:textColor="@color/black"
+        android:textSize="@dimen/row_calendar_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

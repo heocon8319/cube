@@ -101,7 +101,7 @@ class TodayFragment : BaseFragment() {
             }
         }
 
-        val rowCalendar = crRowCalendar.apply {
+        crRowCalendar.apply {
             calendarViewManager = rowCalendarViewManager
             calendarChangesObserver = rowCalendarChangesObserver
             calendarSelectionManager = rowCalendarSelectionManager

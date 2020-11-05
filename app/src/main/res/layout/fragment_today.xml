@@ -31,7 +31,7 @@
 
         <TextView
             android:id="@+id/tvMonth"
-            style="@style/Title_Bold_40"
+            style="@style/title_bold"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/margin_small"
@@ -40,6 +40,7 @@
             android:gravity="top"
             android:text="9"
             android:textColor="@color/black"
+            android:textSize="@dimen/month_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@id/crRowCalendar"
             app:layout_constraintTop_toTopOf="parent" />

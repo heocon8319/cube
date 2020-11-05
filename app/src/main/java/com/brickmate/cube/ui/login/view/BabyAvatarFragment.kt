@@ -97,7 +97,7 @@ class BabyAvatarFragment : BaseFragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode === PICK_IMAGE && resultCode === RESULT_OK && null != attr.data) {
+        if (requestCode === PICK_IMAGE && resultCode === RESULT_OK && null != data) {
             try {
 //                val imageUri: Uri? = data?.data
 //                val imageStream: InputStream? =
@@ -133,8 +133,8 @@ class BabyAvatarFragment : BaseFragment() {
                 e.printStackTrace()
                 toast("Something went wrong")
             }
-        } else if (requestCode === CROP_IMAGE && resultCode === RESULT_OK && null != attr.data) {
-            if (attr.data != null) {
+        } else if (requestCode === CROP_IMAGE && resultCode === RESULT_OK) {
+            if (data != null) {
                 // get the returned data
                 val extras: Bundle = data?.extras!!
                 // get the cropped bitmap

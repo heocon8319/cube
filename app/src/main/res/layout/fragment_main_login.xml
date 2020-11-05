@@ -26,11 +26,12 @@
 
         <TextView
             android:id="@+id/tvSlogan"
-            style="@style/Title_Bold_25"
+            style="@style/title_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/slogan_text"
             android:textColor="@color/jungle_green"
+            android:textSize="@dimen/logo_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -64,12 +65,13 @@
             android:visibility="invisible" />
 
         <TextView
-            style="@style/Title_Medium_18"
+            style="@style/title_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/screen_main_login_text_login_with_email"
-            android:textColor="@color/white">
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_small_size">
 
         </TextView>
     </LinearLayout>
@@ -94,12 +96,13 @@
             android:src="@drawable/ic_naver" />
 
         <TextView
-            style="@style/Title_Medium_18"
+            style="@style/title_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_main_login_text_login_with_naver"
-            android:textColor="@color/white">
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_small_size">
 
         </TextView>
     </LinearLayout>
@@ -124,12 +127,13 @@
             android:src="@drawable/ic_kakao" />
 
         <TextView
-            style="@style/Title_Medium_18"
+            style="@style/title_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_main_login_text_login_with_kakao"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size"/>
     </LinearLayout>
 
     <LinearLayout
@@ -143,12 +147,13 @@
         app:layout_constraintWidth_percent="0.8">
 
         <TextView
-            style="@style/Title_Medium_18"
+            style="@style/title_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_main_login_text_register_with_email"
-            android:textColor="@color/dark_gray"/>
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/title_small_size"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -159,11 +164,12 @@
     </LinearLayout>
 
     <TextView
-        style="@style/Title_Medium_18"
+        style="@style/title_medium"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="@string/app_name_text"
         android:textColor="@color/dark_gray"
+        android:textSize="@dimen/title_small_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

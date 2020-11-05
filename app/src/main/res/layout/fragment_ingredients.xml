@@ -7,23 +7,30 @@
     tools:context=".ui.login.view.GoodIngredientsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tvTitle"
-        style="@style/Title_Medium_20"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_title"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/title_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:textSize="@dimen/title_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/glTop" />
 
     <GridView
         android:id="@+id/gvGoodIngredients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_normal"
-        android:columnWidth="@dimen/margin_small_top_title"
+        android:columnWidth="@dimen/column_ingredient"
         android:horizontalSpacing="@dimen/margin_normal"
         android:numColumns="4"
         android:verticalSpacing="@dimen/margin_normal"
@@ -37,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_normal"
-        android:columnWidth="@dimen/margin_small_top_title"
+        android:columnWidth="@dimen/column_ingredient"
         android:horizontalSpacing="@dimen/margin_normal"
         android:numColumns="4"
         android:verticalSpacing="@dimen/margin_normal"

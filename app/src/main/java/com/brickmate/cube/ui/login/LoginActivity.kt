@@ -8,7 +8,7 @@ import com.brickmate.cube.ui.base.BaseFragment
 import com.brickmate.cube.ui.login.view.BabyAvatarFragment
 import com.brickmate.cube.ui.login.view.MainLoginFragment
 import com.brickmate.cube.utils.popBackStack
-import kotlinx.android.synthetic.main.layout_navigation_background.*
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : BaseActivity() {
