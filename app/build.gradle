@@ -65,9 +65,6 @@ dependencies {
     /* Glide lib for image loading  */
     implementation 'com.github.bumptech.glide:glide:4.11.0'
 
-    /* Crop Image*/
-    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
-
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
     /* Android Architecture Component - Room Persistence Lib  */

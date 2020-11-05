@@ -18,8 +18,8 @@ class LoginActivity : BaseActivity() {
 
     override fun layoutId() = R.layout.activity_login
 
-    override fun fragment() = MainLoginFragment.newInstance()
-//    override fun fragment() = BabyAvatarFragment.newInstance()
+//    override fun fragment() = MainLoginFragment.newInstance()
+    override fun fragment() = BabyAvatarFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
