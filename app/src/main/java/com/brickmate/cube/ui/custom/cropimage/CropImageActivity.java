@@ -30,6 +30,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -95,7 +96,7 @@ public class CropImageActivity extends MonitoredActivity {
     private void setupViews() {
         setContentView(R.layout.activity_crop);
 
-        imageView = (CropImageView) findViewById(R.id.crop_image);
+        imageView = (CropImageView) findViewById(R.id.ciCropView);
         imageView.context = this;
         imageView.setRecycler(new ImageViewTouchBase.Recycler() {
             @Override
@@ -105,14 +106,14 @@ public class CropImageActivity extends MonitoredActivity {
             }
         });
 
-        findViewById(R.id.btn_cancel).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.ivArrowBack).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_CANCELED);
                 finish();
             }
         });
 
-        findViewById(R.id.btn_done).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.llButton).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 onSaveClicked();
             }
@@ -144,10 +145,10 @@ public class CropImageActivity extends MonitoredActivity {
                 option.inSampleSize = sampleSize;
                 rotateBitmap = new RotateBitmap(BitmapFactory.decodeStream(is, null, option), exifRotation);
             } catch (IOException e) {
-                Log.e("Error reading image: " + e.getMessage(), e);
+                Log.e("Error reading image: " , e.getMessage());
                 setResultException(e);
             } catch (OutOfMemoryError e) {
-                Log.e("OOM reading image: " + e.getMessage(), e);
+                Log.e("OOM reading image: " , e.getMessage());
                 setResultException(e);
             } finally {
                 CropUtil.closeSilently(is);
@@ -167,7 +168,7 @@ public class CropImageActivity extends MonitoredActivity {
         }
 
         int maxSize = getMaxImageSize();
-        int sampleSize = 1;
+        int sampleSize = 2;
         while (options.outHeight / sampleSize > maxSize || options.outWidth / sampleSize > maxSize) {
             sampleSize = sampleSize << 1;
         }
@@ -360,10 +361,10 @@ public class CropImageActivity extends MonitoredActivity {
             }
 
         } catch (IOException e) {
-            Log.e("Error cropping image: " + e.getMessage(), e);
+            Log.e("Error cropping image: " , e.getMessage());
             setResultException(e);
         } catch (OutOfMemoryError e) {
-            Log.e("OOM cropping image: " + e.getMessage(), e);
+            Log.e("OOM cropping image: " , e.getMessage());
             setResultException(e);
         } finally {
             CropUtil.closeSilently(is);
@@ -391,7 +392,7 @@ public class CropImageActivity extends MonitoredActivity {
                 }
             } catch (IOException e) {
                 setResultException(e);
-                Log.e("Cannot open file: " + saveUri, e);
+                Log.e("Cannot open file: " , saveUri.toString());
             } finally {
                 CropUtil.closeSilently(outputStream);
             }

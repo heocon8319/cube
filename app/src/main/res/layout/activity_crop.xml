@@ -1,18 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main_large"
+    tools:context=".ui.custom.cropimage.CropImageActivity">
 
     <include
-        android:id="@+id/done_cancel_bar"
-        layout="@layout/layout_done_cancel" />
+        android:id="@+id/clProgressBar"
+        layout="@layout/layout_progress_bar"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:paddingHorizontal="@dimen/margin_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivArrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:text="@string/screen_crop_text_selected"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/ivArrowBack"
+            app:layout_constraintLeft_toRightOf="@id/ivArrowBack"
+            app:layout_constraintTop_toTopOf="@id/ivArrowBack" />
+
+        <RelativeLayout
+            android:id="@+id/llButton"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:background="@drawable/bg_button"
+            app:layout_constraintBottom_toBottomOf="@id/ivArrowBack"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivArrowBack">
+
+            <TextView
+                android:id="@+id/tvTitleButton"
+                style="@style/title_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/screen_crop_text_done"
+                android:textAlignment="center"
+                android:textColor="@color/tahiti_gold"
+                android:textSize="@dimen/button_size" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <com.brickmate.cube.ui.custom.cropimage.CropImageView
-        android:id="@+id/crop_image"
+        android:id="@+id/ciCropView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/crop_texture"
-        android:layout_below="@id/done_cancel_bar" />
-
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_big"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clActionBar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

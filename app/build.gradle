@@ -67,6 +67,8 @@ dependencies {
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+    implementation 'com.isseiaoki:simplecropview:1.1.8'
+
     /* Android Architecture Component - Room Persistence Lib  */
 //    implementation 'android.arch.persistence.room:runtime:1.1.1'
 //    implementation 'android.arch.persistence.room:rxjava2:1.1.1'

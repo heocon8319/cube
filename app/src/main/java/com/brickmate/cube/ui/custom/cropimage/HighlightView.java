@@ -50,7 +50,7 @@ class HighlightView {
     public static final int GROW_BOTTOM_EDGE = (1 << 4);
     public static final int MOVE             = (1 << 5);
 
-    private static final int DEFAULT_HIGHLIGHT_COLOR = 0xFF33B5E5;
+    private static final int DEFAULT_HIGHLIGHT_COLOR = 0xFF29B6AA;
     private static final float HANDLE_RADIUS_DP = 12f;
     private static final float OUTLINE_DP = 2f;
 
@@ -89,11 +89,11 @@ class HighlightView {
         context.getTheme().resolveAttribute(R.attr.cropImageStyle, outValue, true);
         TypedArray attributes = context.obtainStyledAttributes(outValue.resourceId, R.styleable.CropImageView);
         try {
-            showThirds = attributes.getBoolean(R.styleable.CropImageView_showThirds, false);
+            showThirds = attributes.getBoolean(R.styleable.CropImageView_showThirds, true);
             showCircle = attributes.getBoolean(R.styleable.CropImageView_showCircle, false);
             highlightColor = attributes.getColor(R.styleable.CropImageView_highlightColor,
                     DEFAULT_HIGHLIGHT_COLOR);
-            handleMode = HandleMode.values()[attributes.getInt(R.styleable.CropImageView_showHandles, 0)];
+            handleMode = HandleMode.values()[attributes.getInt(R.styleable.CropImageView_showHandles, 1)];
         } finally {
             attributes.recycle();
         }

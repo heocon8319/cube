@@ -63,11 +63,13 @@
 
     //Baby Avatar
     <string name="screen_baby_avatar_text_title">아기 사진을 설정해주세요</string>
+    <string name="screen_crop_text_done">완료</string>
+    <string name="screen_crop_text_selected">1개 선택됨</string>
     <string name="crop_saving">Saving picture…</string>
     <string name="crop_wait">Please wait…</string>
     <string name="crop_pick_error">No image sources available</string>
-    <string name="crop_done">DONE</string>
     <string name="crop_cancel">CANCEL</string>
+
 
 
     //Good Ingredients
