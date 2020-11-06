@@ -4,6 +4,7 @@
     //Margin Padding
     <dimen name="margin_normal">20dp</dimen>
     <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_minus_normal">-20dp</dimen>
     <dimen name="margin_minus_small">-10dp</dimen>
     <dimen name="margin_big">40dp</dimen>
     <dimen name="margin_tiny">5dp</dimen>
@@ -20,7 +21,6 @@
     <dimen name="row_calendar_height">90dp</dimen>
     <dimen name="button_width">70dp</dimen>
     <dimen name="button_height">35dp</dimen>
-    <dimen name="crop_bar_height">56dp</dimen>
 
     //Text Size
     <dimen name="logo_size">25dp</dimen>
@@ -29,5 +29,7 @@
     <dimen name="row_calendar_size">12dp</dimen>
     <dimen name="title_size">20dp</dimen>
     <dimen name="title_small_size">18dp</dimen>
+    <dimen name="title_section_size">14dp</dimen>
+    <dimen name="today_note_size">12dp</dimen>
 
 </resources>

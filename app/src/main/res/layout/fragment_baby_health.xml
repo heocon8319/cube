@@ -21,9 +21,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/screen_baby_health_text_title"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="@dimen/title_size"
-        android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/glTop" />
@@ -32,7 +32,7 @@
         android:id="@+id/llStomach"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_white"
+        android:background="@drawable/bg_baby_health_white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
@@ -46,13 +46,14 @@
             android:src="@drawable/ic_stomach" />
 
         <TextView
+            android:id="@+id/tvStomach"
             style="@style/title_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_baby_health_text_stomach"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/rolling_stone"
             android:textSize="@dimen/title_small_size" />
     </LinearLayout>
 
@@ -61,7 +62,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_normal"
-        android:background="@drawable/bg_white"
+        android:background="@drawable/bg_baby_health_white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/llStomach"
@@ -75,13 +76,14 @@
             android:src="@drawable/ic_thermometer" />
 
         <TextView
+            android:id="@+id/tvThermometer"
             style="@style/title_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_baby_health_text_thermometer"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/rolling_stone"
             android:textSize="@dimen/title_small_size" />
     </LinearLayout>
 
@@ -90,7 +92,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_normal"
-        android:background="@drawable/bg_white"
+        android:background="@drawable/bg_baby_health_white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/llThermometer"
@@ -104,13 +106,14 @@
             android:src="@drawable/ic_toilet" />
 
         <TextView
+            android:id="@+id/tvToilet"
             style="@style/title_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_baby_health_text_toilet"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/rolling_stone"
             android:textSize="@dimen/title_small_size" />
     </LinearLayout>
 

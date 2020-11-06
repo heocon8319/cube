@@ -113,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_email_register_text_certification_phone"
-            android:textColor="@color/dark_gray"
+            android:textColor="@color/rolling_stone"
             android:textSize="@dimen/title_small_size"/>
 
         <ImageView

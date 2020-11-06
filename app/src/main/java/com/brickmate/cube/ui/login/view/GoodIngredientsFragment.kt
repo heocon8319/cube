@@ -3,6 +3,7 @@ package com.brickmate.cube.ui.login.view
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
 import com.brickmate.cube.model.Ingredient
@@ -69,6 +70,9 @@ class GoodIngredientsFragment : BaseFragment() {
 
             val imageView: ImageView = (v.tag as IngredientsAdapter.ItemHolder).background!!
             imageView.setBackgroundResource(selectedItem.getLayout())
+
+            val textView: TextView = (v.tag as IngredientsAdapter.ItemHolder).name!!
+            textView.setTextColor(selectedItem.getTextColor())
         }
     }
 

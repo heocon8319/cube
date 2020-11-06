@@ -21,7 +21,6 @@
     <string name="screen_main_login_text_login_with_email">Email로 로그인</string>
     <string name="screen_main_login_text_login_with_naver">네이버로 시작하기</string>
     <string name="screen_main_login_text_login_with_kakao">카카오로 시작</string>
-    <string name="screen_main_login_text_login_with_apple">APPLE Login</string>
     <string name="screen_main_login_text_register_with_email">Email로 회원가입</string>
 
     //EmailLogin
@@ -68,9 +67,6 @@
     <string name="crop_saving">Saving picture…</string>
     <string name="crop_wait">Please wait…</string>
     <string name="crop_pick_error">No image sources available</string>
-    <string name="crop_cancel">CANCEL</string>
-
-
 
     //Good Ingredients
     <string name="screen_good_ingredients_text_title">아기가 섭취 가능한 식재료는 무엇인가요?</string>
@@ -84,7 +80,17 @@
     <string name="screen_baby_health_text_thermometer">감기</string>
     <string name="screen_baby_health_text_toilet">설사</string>
 
-
+    //Today - Main
+    <string name="screen_today_text_diet">오늘의 식단</string>
+    <string name="screen_today_text_ingredient">먹어본 재료</string>
+    <string name="screen_today_text_dashboard">대쉬보드</string>
+    <string name="screen_today_text_compared_avg">평균대비</string>
+    <string name="screen_today_text_fat">지방</string>
+    <string name="screen_today_text_calorie">열량</string>
+    <string name="screen_today_text_iron">철분</string>
+    <string name="screen_today_text_carbon">탄수화물</string>
+    <string name="screen_today_text_protein">단백질</string>
+    <string name="screen_today_text_avg_height_weight">평균 신장: %1$.2f cm  / 평균 몸무게: %2$.2f kg</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

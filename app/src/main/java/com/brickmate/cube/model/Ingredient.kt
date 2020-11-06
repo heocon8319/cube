@@ -17,4 +17,12 @@ data class Ingredient(
         }
         return default
     }
+
+    fun getTextColor(): Int {
+        var default = R.color.rolling_stone
+        if (isSelected) {
+            default = R.color.white
+        }
+        return default
+    }
 }

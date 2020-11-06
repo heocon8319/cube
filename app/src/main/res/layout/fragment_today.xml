@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_small"
             android:layout_marginBottom="@dimen/margin_normal"
-            android:text="9"
             android:textColor="@color/black"
             android:textSize="@dimen/month_size"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -45,11 +44,245 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fillViewport="true"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clRowCalendar"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clRowCalendar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/margin_normal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clNote"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_today_note"
+                app:layout_constraintHeight_percent="0.09"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.07" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/glLeft"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvNote1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="jgdsdsghgshggsdjd"
+                        android:textColor="@color/jungle_green"
+                        android:textSize="@dimen/today_note_size"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvNote2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hfghdsgfhjdsfghj"
+                        android:textColor="@color/jungle_green"
+                        android:textSize="@dimen/today_note_size"
+                        app:layout_constraintLeft_toLeftOf="@id/tvNote1"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNote1" />
+
+                    <TextView
+                        android:id="@+id/tvNote3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hfghdsgfhjdsfghj"
+                        android:textColor="@color/jungle_green"
+                        android:textSize="@dimen/today_note_size"
+                        app:layout_constraintLeft_toLeftOf="@id/tvNote1"
+                        app:layout_constraintTop_toBottomOf="@id/tvNote2" />
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/ivTodayCook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_today_cook"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clNote" />
+
+            <TextView
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/screen_today_text_diet"
+                android:textColor="@color/jungle_green"
+                android:textSize="@dimen/title_section_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivTodayCook"
+                app:layout_constraintLeft_toRightOf="@id/ivTodayCook"
+                app:layout_constraintTop_toTopOf="@id/ivTodayCook" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTodayDiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivTodayCook" />
+
+            <ImageView
+                android:id="@+id/ivTodaySearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:src="@drawable/ic_today_search"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvTodayDiet" />
+
+            <TextView
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/screen_today_text_dashboard"
+                android:textColor="@color/jungle_green"
+                android:textSize="@dimen/title_section_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivTodaySearch"
+                app:layout_constraintLeft_toRightOf="@id/ivTodaySearch"
+                app:layout_constraintTop_toTopOf="@id/ivTodaySearch" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/screen_today_text_avg_height_weight"
+                android:textAlignment="center"
+                android:textColor="@color/rolling_stone"
+                android:textSize="@dimen/today_note_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivTodaySearch"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivTodaySearch"
+                app:layout_constraintWidth_percent="0.65" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTodayGraph"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/bg_today_chart"
+                app:layout_constraintHeight_percent="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivTodaySearch" />
+
+            <LinearLayout
+                android:id="@+id/llStomach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clTodayGraph"
+                app:layout_constraintWidth_percent="0.8">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:src="@drawable/ic_stomach" />
+
+                <TextView
+                    android:id="@+id/tvStomach"
+                    style="@style/title_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/screen_baby_health_text_stomach"
+                    android:textAlignment="center"
+                    android:textColor="@color/rolling_stone"
+                    android:textSize="@dimen/title_small_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llThermometer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:background="@drawable/bg_baby_health_white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llStomach"
+                app:layout_constraintWidth_percent="0.8">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:src="@drawable/ic_thermometer" />
+
+                <TextView
+                    android:id="@+id/tvThermometer"
+                    style="@style/title_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/screen_baby_health_text_thermometer"
+                    android:textAlignment="center"
+                    android:textColor="@color/rolling_stone"
+                    android:textSize="@dimen/title_small_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llToilet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:background="@drawable/bg_baby_health_white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llThermometer"
+                app:layout_constraintWidth_percent="0.8">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:src="@drawable/ic_toilet" />
+
+                <TextView
+                    android:id="@+id/tvToilet"
+                    style="@style/title_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/screen_baby_health_text_toilet"
+                    android:textAlignment="center"
+                    android:textColor="@color/rolling_stone"
+                    android:textSize="@dimen/title_small_size" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

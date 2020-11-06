@@ -18,6 +18,7 @@
         android:id="@+id/tvNameIngredient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/rolling_stone"
         app:layout_constraintBottom_toBottomOf="@id/ivBGIngredient"
         app:layout_constraintLeft_toLeftOf="@id/ivBGIngredient"
         app:layout_constraintRight_toRightOf="@id/ivBGIngredient"

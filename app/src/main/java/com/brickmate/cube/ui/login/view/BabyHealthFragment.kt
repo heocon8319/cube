@@ -1,8 +1,10 @@
 package com.brickmate.cube.ui.login.view
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
 import com.brickmate.cube.sharedPrefs
@@ -59,14 +61,17 @@ class BabyHealthFragment : BaseFragment() {
         llStomach.setOnClickListener {
             isStomachSelected = !isStomachSelected
             setLayoutButton(isStomachSelected, llStomach)
+            setTextColor(isToiletSelected, tvStomach)
         }
         llThermometer.setOnClickListener {
             isThermometerSelected = !isThermometerSelected
             setLayoutButton(isThermometerSelected, llThermometer)
+            setTextColor(isToiletSelected, tvThermometer)
         }
         llToilet.setOnClickListener {
             isToiletSelected = !isToiletSelected
             setLayoutButton(isToiletSelected, llToilet)
+            setTextColor(isToiletSelected, tvToilet)
         }
     }
 
@@ -80,9 +85,18 @@ class BabyHealthFragment : BaseFragment() {
 
     private fun setLayoutButton(isSelected: Boolean, layout: LinearLayout) {
         if (!isSelected) {
-            layout.setBackgroundResource(R.drawable.bg_white)
+            layout.setBackgroundResource(R.drawable.bg_baby_health_white)
         } else {
-            layout.setBackgroundResource(R.drawable.bg_larger_green)
+            layout.setBackgroundResource(R.drawable.bg_baby_health_green)
+        }
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun setTextColor(isSelected: Boolean, textView: TextView) {
+        if (!isSelected) {
+            textView.setTextColor(R.color.rolling_stone)
+        } else {
+            textView.setTextColor(R.color.white)
         }
     }
 

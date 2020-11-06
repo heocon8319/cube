@@ -152,7 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/screen_main_login_text_register_with_email"
-            android:textColor="@color/dark_gray"
+            android:textColor="@color/rolling_stone"
             android:textSize="@dimen/title_small_size"/>
 
         <ImageView
@@ -168,7 +168,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="@string/app_name_text"
-        android:textColor="@color/dark_gray"
+        android:textColor="@color/rolling_stone"
         android:textSize="@dimen/title_small_size"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
