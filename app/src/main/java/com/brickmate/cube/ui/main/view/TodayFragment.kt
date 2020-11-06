@@ -45,8 +45,6 @@ class TodayFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-
         initRowCalendar()
     }
 
@@ -105,7 +103,7 @@ class TodayFragment : BaseFragment() {
             calendarViewManager = rowCalendarViewManager
             calendarChangesObserver = rowCalendarChangesObserver
             calendarSelectionManager = rowCalendarSelectionManager
-            futureDaysCount = 1000
+            futureDaysCount = 500
             pastDaysCount = 500
             includeCurrentDate = true
             init()

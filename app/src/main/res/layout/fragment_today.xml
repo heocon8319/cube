@@ -7,8 +7,8 @@
     tools:context=".ui.main.view.TodayFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clRowCalendar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/row_calendar_height"
         android:background="@drawable/bg_row_calendar"
@@ -20,7 +20,7 @@
             android:id="@+id/crRowCalendar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_small"
             app:deselection="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -33,11 +33,9 @@
             android:id="@+id/tvMonth"
             style="@style/title_bold"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_small"
-            android:layout_marginTop="@dimen/margin_minus_small"
-            android:layout_marginBottom="@dimen/margin_small"
-            android:gravity="top"
+            android:layout_marginBottom="@dimen/margin_normal"
             android:text="9"
             android:textColor="@color/black"
             android:textSize="@dimen/month_size"
@@ -46,5 +44,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clRowCalendar"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
+import com.brickmate.cube.sharedPrefs
 import com.brickmate.cube.ui.base.BaseFragment
 import com.brickmate.cube.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_baby_health.*
@@ -74,6 +75,7 @@ class BabyHealthFragment : BaseFragment() {
         val intent = Intent(activity, MainActivity::class.java)
         startActivity(intent)
         activity.finish()
+        sharedPrefs.setLogIn(true)
     }
 
     private fun setLayoutButton(isSelected: Boolean, layout: LinearLayout) {
