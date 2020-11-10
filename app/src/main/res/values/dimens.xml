@@ -21,6 +21,7 @@
     <dimen name="row_calendar_height">90dp</dimen>
     <dimen name="button_width">70dp</dimen>
     <dimen name="button_height">35dp</dimen>
+    <dimen name="radar_chart_height">250dp</dimen>
 
     //Text Size
     <dimen name="logo_size">25dp</dimen>

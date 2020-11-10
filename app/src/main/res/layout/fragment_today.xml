@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="@drawable/bg_today_note"
-                app:layout_constraintHeight_percent="0.09"
+                app:layout_constraintHeight_percent="0.15"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -86,7 +86,6 @@
                         android:id="@+id/tvNote1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="jgdsdsghgshggsdjd"
                         android:textColor="@color/jungle_green"
                         android:textSize="@dimen/today_note_size"
                         app:layout_constraintHorizontal_chainStyle="packed"
@@ -97,7 +96,6 @@
                         android:id="@+id/tvNote2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="hfghdsgfhjdsfghj"
                         android:textColor="@color/jungle_green"
                         android:textSize="@dimen/today_note_size"
                         app:layout_constraintLeft_toLeftOf="@id/tvNote1"
@@ -107,15 +105,20 @@
                         android:id="@+id/tvNote3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="hfghdsgfhjdsfghj"
                         android:textColor="@color/jungle_green"
                         android:textSize="@dimen/today_note_size"
                         app:layout_constraintLeft_toLeftOf="@id/tvNote1"
                         app:layout_constraintTop_toBottomOf="@id/tvNote2" />
                 </LinearLayout>
 
-
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.15" />
 
             <ImageView
                 android:id="@+id/ivTodayCook"
@@ -123,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_today_cook"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clNote" />
+                app:layout_constraintTop_toBottomOf="@id/glTop" />
 
             <TextView
                 style="@style/title_medium"
@@ -170,17 +173,18 @@
                 app:layout_constraintTop_toTopOf="@id/ivTodaySearch" />
 
             <TextView
+                android:id="@+id/tvTodayHeightWeight"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_small"
                 android:text="@string/screen_today_text_avg_height_weight"
-                android:textAlignment="center"
+                android:textAlignment="viewEnd"
                 android:textColor="@color/rolling_stone"
                 android:textSize="@dimen/today_note_size"
                 app:layout_constraintBottom_toBottomOf="@id/ivTodaySearch"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@id/ivTodaySearch"
-                app:layout_constraintWidth_percent="0.65" />
+                app:layout_constraintWidth_percent="0.7" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clTodayGraph"
@@ -188,98 +192,178 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="@dimen/margin_small"
                 android:background="@drawable/bg_today_chart"
-                app:layout_constraintHeight_percent="0.3"
+                app:layout_constraintHeight_percent="0.5"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivTodaySearch" />
+                app:layout_constraintTop_toBottomOf="@id/ivTodaySearch">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.7">
+
+                    <com.github.mikephil.charting.charts.RadarChart
+                        android:id="@+id/mChart"
+                        android:layout_width="@dimen/radar_chart_height"
+                        android:layout_height="@dimen/radar_chart_height"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTodayAvgNutri"
+                        style="@style/title_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/logo_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/title_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@string/screen_today_text_compared_avg"
+                        android:textColor="@color/amaranth"
+                        android:textSize="@dimen/title_section_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:src="@drawable/ic_today_height" />
+
+                    <TextView
+                        android:id="@+id/tvTodayHeight"
+                        style="@style/title_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@string/screen_today_text_height"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/today_note_size" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:src="@drawable/ic_today_weight" />
+
+                    <TextView
+                        android:id="@+id/tvTodayWeight"
+                        style="@style/title_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="@string/screen_today_text_weight"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/today_note_size" />
+
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:id="@+id/llStomach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:background="@drawable/bg_today_health_white"
+                android:gravity="center"
                 android:orientation="vertical"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clTodayGraph"
-                app:layout_constraintWidth_percent="0.8">
+                app:layout_constraintEnd_toStartOf="@+id/llThermometer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left|center"
-                    android:layout_marginLeft="@dimen/margin_normal"
                     android:src="@drawable/ic_stomach" />
 
                 <TextView
                     android:id="@+id/tvStomach"
                     style="@style/title_medium"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="@string/screen_baby_health_text_stomach"
                     android:textAlignment="center"
                     android:textColor="@color/rolling_stone"
-                    android:textSize="@dimen/title_small_size" />
+                    android:textSize="@dimen/today_note_size" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llThermometer"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_normal"
-                android:background="@drawable/bg_baby_health_white"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/llStomach"
-                app:layout_constraintWidth_percent="0.8">
+                android:background="@drawable/bg_today_health_white"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@+id/llToilet"
+                app:layout_constraintStart_toEndOf="@+id/llStomach"
+                app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left|center"
-                    android:layout_marginLeft="@dimen/margin_normal"
                     android:src="@drawable/ic_thermometer" />
 
                 <TextView
                     android:id="@+id/tvThermometer"
                     style="@style/title_medium"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="@string/screen_baby_health_text_thermometer"
-                    android:textAlignment="center"
                     android:textColor="@color/rolling_stone"
-                    android:textSize="@dimen/title_small_size" />
+                    android:textSize="@dimen/today_note_size" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llToilet"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_normal"
-                android:background="@drawable/bg_baby_health_white"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/llThermometer"
-                app:layout_constraintWidth_percent="0.8">
+                android:background="@drawable/bg_today_health_white"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/llThermometer"
+                app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left|center"
-                    android:layout_marginLeft="@dimen/margin_normal"
                     android:src="@drawable/ic_toilet" />
 
                 <TextView
                     android:id="@+id/tvToilet"
                     style="@style/title_medium"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="@string/screen_baby_health_text_toilet"
-                    android:textAlignment="center"
                     android:textColor="@color/rolling_stone"
-                    android:textSize="@dimen/title_small_size" />
+                    android:textSize="@dimen/today_note_size" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 

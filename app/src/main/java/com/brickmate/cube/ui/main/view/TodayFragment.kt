@@ -1,6 +1,7 @@
 package com.brickmate.cube.ui.main.view
 
 import android.os.Bundle
+import android.util.SparseIntArray
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
 import com.brickmate.cube.ui.base.BaseFragment
@@ -9,6 +10,11 @@ import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.CalendarViewManag
 import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.brickmate.cube.ui.custom.singlerowcalendar.selection.CalendarSelectionManager
 import com.brickmate.cube.ui.custom.singlerowcalendar.utils.DateUtils
+import com.github.mikephil.charting.data.RadarData
+import com.github.mikephil.charting.data.RadarDataSet
+import com.github.mikephil.charting.data.RadarEntry
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet
 import kotlinx.android.synthetic.main.fragment_today.*
 import kotlinx.android.synthetic.main.layout_item_row_calendar.view.*
 import java.util.*
@@ -32,6 +38,11 @@ class TodayFragment : BaseFragment() {
     private val calendar = Calendar.getInstance()
     private var currentMonth = 0
 
+    private val scores = SparseIntArray(5)
+    private val entries: ArrayList<RadarEntry> = ArrayList()
+    private val dataSets: ArrayList<IRadarDataSet> = ArrayList()
+
+
     override fun layoutId() = R.layout.fragment_today
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +57,7 @@ class TodayFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initRowCalendar()
+        initChart()
     }
 
     private fun initRowCalendar() {
@@ -108,6 +120,66 @@ class TodayFragment : BaseFragment() {
             includeCurrentDate = true
             init()
         }
+    }
+
+    private fun initChart() {
+
+        val xAxisValues: List<String> = ArrayList(
+            Arrays.asList(
+                resources.getString(R.string.screen_today_text_calorie),
+                resources.getString(R.string.screen_today_text_fat),
+                resources.getString(R.string.screen_today_text_protein),
+                resources.getString(R.string.screen_today_text_carbon),
+                resources.getString(R.string.screen_today_text_iron)
+            )
+        )
+
+        val xAxis = mChart!!.xAxis
+        xAxis.xOffset = 0f
+        xAxis.yOffset = 0f
+        xAxis.textSize = 13f
+        xAxis.setCenterAxisLabels(true);
+        xAxis.valueFormatter = (IndexAxisValueFormatter(xAxisValues))
+
+        val yAxis = mChart!!.yAxis
+        yAxis.axisMinimum = 0f
+        yAxis.axisMaximum = 50f
+        yAxis.setDrawLabels(false)
+
+
+        mChart!!.legend.isEnabled = false
+        mChart!!.description.isEnabled = false
+
+        scores.append(1, 15);
+        scores.append(2, 25);
+        scores.append(3, 35);
+        scores.append(4, 40);
+        scores.append(5, 45);
+
+        mChart.webColorInner = resources.getColor(R.color.golden_yellow)
+        mChart.webColor = resources.getColor(R.color.jungle_green)
+        mChart.webLineWidth = 3f
+
+        drawChart();
+    }
+
+    private fun drawChart() {
+        entries.clear()
+        for (i in 1..5) {//1..5
+            entries.add(RadarEntry(scores[i].toFloat()))
+        }
+        val dataSet = RadarDataSet(entries, "")
+        dataSet.valueTextColor = resources.getColor(R.color.transparent)
+
+        dataSet.fillAlpha = 255
+        dataSet.fillColor = resources.getColor(R.color.jungle_green)
+        dataSet.setDrawFilled(true)
+
+        dataSets.add(dataSet)
+        val data = RadarData(dataSets)
+        data.setValueTextSize(8f)
+        mChart!!.data = data
+        mChart.invalidate()
     }
 
     companion object {
