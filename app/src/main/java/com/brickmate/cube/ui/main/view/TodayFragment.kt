@@ -3,13 +3,19 @@ package com.brickmate.cube.ui.main.view
 import android.os.Bundle
 import android.util.SparseIntArray
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.brickmate.cube.R
+import com.brickmate.cube.model.TodayMeal
 import com.brickmate.cube.ui.base.BaseFragment
 import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.CalendarChangesObserver
 import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.CalendarViewManager
 import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.brickmate.cube.ui.custom.singlerowcalendar.selection.CalendarSelectionManager
 import com.brickmate.cube.ui.custom.singlerowcalendar.utils.DateUtils
+import com.brickmate.cube.ui.login.view.GoodIngredientsFragment
+import com.brickmate.cube.ui.main.adapter.TodayMealAdapter
+import com.brickmate.cube.utils.TAG
+import com.brickmate.cube.utils.toast
 import com.github.mikephil.charting.data.RadarData
 import com.github.mikephil.charting.data.RadarDataSet
 import com.github.mikephil.charting.data.RadarEntry
@@ -57,7 +63,10 @@ class TodayFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initRowCalendar()
+        initRecycleView()
         initChart()
+        initDataDummy()
+        initListener()
     }
 
     private fun initRowCalendar() {
@@ -122,6 +131,53 @@ class TodayFragment : BaseFragment() {
         }
     }
 
+    private fun initRecycleView() {
+        var dummy: ArrayList<TodayMeal> = ArrayList()
+        dummy.add(
+            TodayMeal(
+                true,
+                50,
+                "",
+                arrayListOf<String>("carrot", "tomato", "potato", "beef")
+            )
+        )
+        dummy.add(
+            TodayMeal(
+                false,
+                0,
+                "3 PM",
+                arrayListOf<String>("Lactose", "Canxi", "Maltodextrin")
+            )
+        )
+        dummy.add(
+            TodayMeal(
+                true,
+                0,
+                "7 AM",
+                arrayListOf<String>("Fish", "sweet potato")
+            )
+        )
+        dummy.add(
+            TodayMeal(
+                false,
+                75,
+                "",
+                arrayListOf<String>("Lactose", "Magie Clorua")
+            )
+        )
+
+        rvTodayDiet.layoutManager = LinearLayoutManager(activity)
+        rvTodayDiet.setHasFixedSize(true)
+        var adapter = TodayMealAdapter(dummy)
+        adapter.onImageMLClick = {
+            toast(it)
+        }
+        adapter.onItemClick = {
+            toast(it.getIngredientString())
+        }
+        rvTodayDiet.adapter = adapter
+    }
+
     private fun initChart() {
 
         val xAxisValues: List<String> = ArrayList(
@@ -180,6 +236,25 @@ class TodayFragment : BaseFragment() {
         data.setValueTextSize(8f)
         mChart!!.data = data
         mChart.invalidate()
+    }
+
+    private fun initDataDummy() {
+        tvNote1.text = "Note1"
+        tvNote2.text = "Note2"
+        tvNote3.text = "Note3"
+
+        tvTodayAvgNutri.text = "79"
+
+        tvTodayHeightWeight.text = String.format(resources.getString(R.string.screen_today_text_avg_height_weight), 74.1f, 12.9f)
+        tvTodayHeight.text = String.format(resources.getString(R.string.screen_today_text_height), "+", 2.9f)
+        tvTodayWeight.text = String.format(resources.getString(R.string.screen_today_text_weight), "-", 0.58f)
+    }
+
+    private fun initListener() {
+        clTodayGraph.setOnClickListener {
+            val fragDes = TodayNutriSummaryFragment.newInstance()
+            navigateToFragment(fragDes, fragDes.TAG())
+        }
     }
 
     companion object {

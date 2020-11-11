@@ -7,6 +7,7 @@
     tools:context=".ui.main.view.TodayFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <!-- Calendar -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clRowCalendar"
         android:layout_width="match_parent"
@@ -44,10 +45,12 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Scrollview -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/clRowCalendar">
@@ -60,9 +63,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clNote"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/today_view_note"
                 android:background="@drawable/bg_today_note"
-                app:layout_constraintHeight_percent="0.15"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -113,20 +115,13 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/glTop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.15" />
-
             <ImageView
                 android:id="@+id/ivTodayCook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_today_cook"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/glTop" />
+                app:layout_constraintTop_toBottomOf="@id/clNote" />
 
             <TextView
                 style="@style/title_medium"
@@ -145,8 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
+                android:visibility="visible"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivTodayCook" />
@@ -189,10 +183,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clTodayGraph"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/today_view_chart"
                 android:layout_marginTop="@dimen/margin_small"
                 android:background="@drawable/bg_today_chart"
-                app:layout_constraintHeight_percent="0.5"
+                android:visibility="visible"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivTodaySearch">
@@ -243,7 +237,7 @@
                         style="@style/title_medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginTop="@dimen/margin_tiny"
                         android:text="@string/screen_today_text_compared_avg"
                         android:textColor="@color/amaranth"
                         android:textSize="@dimen/title_section_size" />
@@ -288,10 +282,12 @@
                 android:id="@+id/llStomach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:background="@drawable/bg_today_health_white"
                 android:gravity="center"
                 android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/vBottom"
                 app:layout_constraintEnd_toStartOf="@+id/llThermometer"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
@@ -316,10 +312,12 @@
                 android:id="@+id/llThermometer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:background="@drawable/bg_today_health_white"
                 android:gravity="center"
                 android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/vBottom"
                 app:layout_constraintEnd_toStartOf="@+id/llToilet"
                 app:layout_constraintStart_toEndOf="@+id/llStomach"
                 app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
@@ -343,10 +341,12 @@
                 android:id="@+id/llToilet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:background="@drawable/bg_today_health_white"
                 android:gravity="center"
                 android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/vBottom"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/llThermometer"
                 app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
@@ -365,6 +365,15 @@
                     android:textColor="@color/rolling_stone"
                     android:textSize="@dimen/today_note_size" />
             </LinearLayout>
+
+            <View
+                android:id="@+id/vBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/padding_scroll_view"
+                android:layout_marginBottom="@dimen/padding_scroll_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

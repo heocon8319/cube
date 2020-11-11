@@ -85,8 +85,9 @@
     <string name="screen_today_text_ingredient">먹어본 재료</string>
     <string name="screen_today_text_dashboard">대쉬보드</string>
     <string name="screen_today_text_compared_avg">평균대비</string>
-    <string name="screen_today_text_height">%1$.2f cm</string>
-    <string name="screen_today_text_weight">%1$.2f kg</string>
+    <string name="screen_today_text_height">%1$s %2$.2f cm</string>
+    <string name="screen_today_text_weight">%1$s %2$.2f kg</string>
+    <string name="screen_today_text_ml">%1$d ml</string>
     <string name="screen_today_text_fat">지방</string>
     <string name="screen_today_text_calorie">열량</string>
     <string name="screen_today_text_iron">철분</string>

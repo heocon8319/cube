@@ -11,18 +11,10 @@ data class Ingredient(
 ) : Parcelable {
 
     fun getLayout(): Int {
-        var default = R.drawable.bg_item_grid_view_gray
-        if (isSelected) {
-            default = R.drawable.bg_item_grid_view_green
-        }
-        return default
+        return  if (isSelected) R.drawable.bg_item_grid_view_green else R.drawable.bg_item_grid_view_gray
     }
 
     fun getTextColor(): Int {
-        var default = R.color.rolling_stone
-        if (isSelected) {
-            default = R.color.white
-        }
-        return default
+        return  if (isSelected) R.color.white else R.color.rolling_stone
     }
 }

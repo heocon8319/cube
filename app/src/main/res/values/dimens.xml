@@ -8,6 +8,7 @@
     <dimen name="margin_minus_small">-10dp</dimen>
     <dimen name="margin_big">40dp</dimen>
     <dimen name="margin_tiny">5dp</dimen>
+    <dimen name="padding_scroll_view">130dp</dimen>
 
     //Height Width
     <dimen name="column_ingredient">150dp</dimen>
@@ -22,6 +23,11 @@
     <dimen name="button_width">70dp</dimen>
     <dimen name="button_height">35dp</dimen>
     <dimen name="radar_chart_height">250dp</dimen>
+    <dimen name="card_view_radius">10dp</dimen>
+    <dimen name="card_view_height">130dp</dimen>
+    <dimen name="today_view_note">90dp</dimen>
+    <dimen name="today_view_chart">250dp</dimen>
+
 
     //Text Size
     <dimen name="logo_size">25dp</dimen>
