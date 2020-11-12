@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/llStomach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:background="@drawable/bg_today_health_white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/vBottom"
+        app:layout_constraintEnd_toStartOf="@+id/llThermometer"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_stomach" />
+
+        <TextView
+            android:id="@+id/tvStomach"
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_baby_health_text_stomach"
+            android:textAlignment="center"
+            android:textColor="@color/rolling_stone"
+            android:textSize="@dimen/today_note_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llThermometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:background="@drawable/bg_today_health_white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/vBottom"
+        app:layout_constraintEnd_toStartOf="@+id/llToilet"
+        app:layout_constraintStart_toEndOf="@+id/llStomach">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_thermometer" />
+
+        <TextView
+            android:id="@+id/tvThermometer"
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_baby_health_text_thermometer"
+            android:textColor="@color/rolling_stone"
+            android:textSize="@dimen/today_note_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llToilet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:background="@drawable/bg_today_health_white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/vBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llThermometer">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_toilet" />
+
+        <TextView
+            android:id="@+id/tvToilet"
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screen_baby_health_text_toilet"
+            android:textColor="@color/rolling_stone"
+            android:textSize="@dimen/today_note_size" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/padding_scroll_view"
+        android:layout_marginBottom="@dimen/padding_scroll_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -95,6 +95,13 @@
     <string name="screen_today_text_protein">단백질</string>
     <string name="screen_today_text_avg_height_weight">평균 신장: %1$.2f cm  / 평균 몸무게: %2$.2f kg</string>
 
+    //Today - Nutrition Summary
+    <string name="screen_nutrition_summary_text_calorie">칼로리</string>
+    <string name="screen_nutrition_summary_text_carbon">탄수화물</string>
+    <string name="screen_nutrition_summary_text_protein">단백질</string>
+    <string name="screen_nutrition_summary_text_fat">지방</string>
+    <string name="screen_nutrition_summary_text_water">물</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

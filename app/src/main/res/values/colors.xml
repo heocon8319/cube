@@ -15,7 +15,12 @@
     <color name="silver">#C0C0C0</color>
     <color name="rolling_stone">#7C7D7E</color>
     <color name="amaranth">#E92165</color>
-    <color name="dark_gray">#A9A9A9</color>
+    <color name="fire_bush">#E18731</color>
+    <color name="downy">#6EC5C7</color>
+    <color name="bittersweet">#FF7070</color>
+    <color name="lightning_yellow">#FABF14</color>
+    <color name="picton_blue">#40B2E4</color>
+    <color name="bg_process_bar">#E5E8EF</color>
     <color name="background">#F6F6F6</color>
     <color name="bg_navigation_bar">#FFE7D0</color>
     <color name="tahiti_gold">#F0830A</color>

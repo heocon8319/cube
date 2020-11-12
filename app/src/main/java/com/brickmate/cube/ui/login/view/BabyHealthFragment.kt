@@ -61,12 +61,12 @@ class BabyHealthFragment : BaseFragment() {
         llStomach.setOnClickListener {
             isStomachSelected = !isStomachSelected
             setLayoutButton(isStomachSelected, llStomach)
-            setTextColor(isToiletSelected, tvStomach)
+            setTextColor(isStomachSelected, tvStomach)
         }
         llThermometer.setOnClickListener {
             isThermometerSelected = !isThermometerSelected
             setLayoutButton(isThermometerSelected, llThermometer)
-            setTextColor(isToiletSelected, tvThermometer)
+            setTextColor(isThermometerSelected, tvThermometer)
         }
         llToilet.setOnClickListener {
             isToiletSelected = !isToiletSelected
@@ -94,9 +94,9 @@ class BabyHealthFragment : BaseFragment() {
     @SuppressLint("ResourceAsColor")
     private fun setTextColor(isSelected: Boolean, textView: TextView) {
         if (!isSelected) {
-            textView.setTextColor(R.color.rolling_stone)
+            textView.setTextColor(resources.getColor(R.color.rolling_stone))
         } else {
-            textView.setTextColor(R.color.white)
+            textView.setTextColor(resources.getColor(R.color.white))
         }
     }
 

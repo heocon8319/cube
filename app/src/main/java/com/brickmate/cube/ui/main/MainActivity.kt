@@ -11,7 +11,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity() {
     override fun layoutId() = R.layout.activity_main
 
-    override fun fragment() = TodayFragment.newInstance()
+//    override fun fragment() = TodayFragment.newInstance()
+    override fun fragment() = TodayNutriSummaryFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

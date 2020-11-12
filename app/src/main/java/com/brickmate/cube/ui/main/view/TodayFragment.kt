@@ -1,7 +1,10 @@
 package com.brickmate.cube.ui.main.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.SparseIntArray
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.brickmate.cube.R
@@ -12,7 +15,6 @@ import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.CalendarViewManag
 import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.SingleRowCalendarAdapter
 import com.brickmate.cube.ui.custom.singlerowcalendar.selection.CalendarSelectionManager
 import com.brickmate.cube.ui.custom.singlerowcalendar.utils.DateUtils
-import com.brickmate.cube.ui.login.view.GoodIngredientsFragment
 import com.brickmate.cube.ui.main.adapter.TodayMealAdapter
 import com.brickmate.cube.utils.TAG
 import com.brickmate.cube.utils.toast
@@ -21,8 +23,13 @@ import com.github.mikephil.charting.data.RadarDataSet
 import com.github.mikephil.charting.data.RadarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet
+import kotlinx.android.synthetic.main.fragment_baby_health.*
 import kotlinx.android.synthetic.main.fragment_today.*
 import kotlinx.android.synthetic.main.layout_item_row_calendar.view.*
+import kotlinx.android.synthetic.main.layout_row_calendar.view.*
+import kotlinx.android.synthetic.main.layout_today_baby_health.view.*
+import kotlinx.android.synthetic.main.layout_today_notice.view.*
+import kotlinx.android.synthetic.main.layout_today_radar_graph.view.*
 import java.util.*
 
 
@@ -73,7 +80,7 @@ class TodayFragment : BaseFragment() {
         // Set current date, month
         calendar.time = Date()
         currentMonth = calendar[Calendar.MONTH]
-        tvMonth.text = currentMonth.toString()
+        clRowCalendar.tvMonth.text = currentMonth.toString()
 
         // Layout
         val rowCalendarViewManager = object :
@@ -109,7 +116,7 @@ class TodayFragment : BaseFragment() {
         val rowCalendarChangesObserver = object :
             CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
-                tvMonth.text = DateUtils.getMonthNumber(date)
+                clRowCalendar.tvMonth.text = DateUtils.getMonthNumber(date)
                 super.whenSelectionChanged(isSelected, position, date)
             }
         }
@@ -120,7 +127,7 @@ class TodayFragment : BaseFragment() {
             }
         }
 
-        crRowCalendar.apply {
+        clRowCalendar.crRowCalendar.apply {
             calendarViewManager = rowCalendarViewManager
             calendarChangesObserver = rowCalendarChangesObserver
             calendarSelectionManager = rowCalendarSelectionManager
@@ -190,21 +197,21 @@ class TodayFragment : BaseFragment() {
             )
         )
 
-        val xAxis = mChart!!.xAxis
+        val xAxis = clTodayGraph.mChart!!.xAxis
         xAxis.xOffset = 0f
         xAxis.yOffset = 0f
         xAxis.textSize = 13f
         xAxis.setCenterAxisLabels(true);
         xAxis.valueFormatter = (IndexAxisValueFormatter(xAxisValues))
 
-        val yAxis = mChart!!.yAxis
+        val yAxis = clTodayGraph.mChart!!.yAxis
         yAxis.axisMinimum = 0f
         yAxis.axisMaximum = 50f
         yAxis.setDrawLabels(false)
 
 
-        mChart!!.legend.isEnabled = false
-        mChart!!.description.isEnabled = false
+        clTodayGraph.mChart!!.legend.isEnabled = false
+        clTodayGraph.mChart!!.description.isEnabled = false
 
         scores.append(1, 15);
         scores.append(2, 25);
@@ -212,9 +219,9 @@ class TodayFragment : BaseFragment() {
         scores.append(4, 40);
         scores.append(5, 45);
 
-        mChart.webColorInner = resources.getColor(R.color.golden_yellow)
-        mChart.webColor = resources.getColor(R.color.jungle_green)
-        mChart.webLineWidth = 3f
+        clTodayGraph.mChart.webColorInner = resources.getColor(R.color.golden_yellow)
+        clTodayGraph.mChart.webColor = resources.getColor(R.color.jungle_green)
+        clTodayGraph.mChart.webLineWidth = 3f
 
         drawChart();
     }
@@ -234,26 +241,62 @@ class TodayFragment : BaseFragment() {
         dataSets.add(dataSet)
         val data = RadarData(dataSets)
         data.setValueTextSize(8f)
-        mChart!!.data = data
-        mChart.invalidate()
+        clTodayGraph.mChart!!.data = data
+        clTodayGraph.mChart.invalidate()
     }
 
     private fun initDataDummy() {
-        tvNote1.text = "Note1"
-        tvNote2.text = "Note2"
-        tvNote3.text = "Note3"
+        clNote.tvNote1.text = "Note1"
+        clNote.tvNote2.text = "Note2"
+        clNote.tvNote3.text = "Note3"
 
-        tvTodayAvgNutri.text = "79"
+        clTodayGraph.tvTodayAvgNutri.text = "79"
 
         tvTodayHeightWeight.text = String.format(resources.getString(R.string.screen_today_text_avg_height_weight), 74.1f, 12.9f)
-        tvTodayHeight.text = String.format(resources.getString(R.string.screen_today_text_height), "+", 2.9f)
-        tvTodayWeight.text = String.format(resources.getString(R.string.screen_today_text_weight), "-", 0.58f)
+        clTodayGraph.tvTodayHeight.text = String.format(resources.getString(R.string.screen_today_text_height), "+", 2.9f)
+        clTodayGraph.tvTodayWeight.text = String.format(resources.getString(R.string.screen_today_text_weight), "-", 0.58f)
     }
 
     private fun initListener() {
         clTodayGraph.setOnClickListener {
             val fragDes = TodayNutriSummaryFragment.newInstance()
             navigateToFragment(fragDes, fragDes.TAG())
+        }
+
+        var isStomachSelected: Boolean = false
+        var isThermometerSelected: Boolean = false
+        var isToiletSelected: Boolean = false
+        clBabyHealth.llStomach.setOnClickListener {
+            isStomachSelected = !isStomachSelected
+            setLayoutButton(isStomachSelected, clBabyHealth.llStomach)
+            setTextColor(isStomachSelected, clBabyHealth.tvStomach)
+        }
+        clBabyHealth.llThermometer.setOnClickListener {
+            isThermometerSelected = !isThermometerSelected
+            setLayoutButton(isThermometerSelected, clBabyHealth.llThermometer)
+            setTextColor(isThermometerSelected, clBabyHealth.tvThermometer)
+        }
+        clBabyHealth.llToilet.setOnClickListener {
+            isToiletSelected = !isToiletSelected
+            setLayoutButton(isToiletSelected, clBabyHealth.llToilet)
+            setTextColor(isToiletSelected, clBabyHealth.tvToilet)
+        }
+    }
+
+    private fun setLayoutButton(isSelected: Boolean, layout: LinearLayout) {
+        if (!isSelected) {
+            layout.setBackgroundResource(R.drawable.bg_today_health_white)
+        } else {
+            layout.setBackgroundResource(R.drawable.bg_today_health_green)
+        }
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun setTextColor(isSelected: Boolean, textView: TextView) {
+        if (!isSelected) {
+            textView.setTextColor(resources.getColor(R.color.rolling_stone))
+        } else {
+            textView.setTextColor(resources.getColor(R.color.white))
         }
     }
 

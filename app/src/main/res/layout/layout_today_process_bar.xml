@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCalorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/process_bar_bg_height"
+            android:layout_marginBottom="@dimen/margin_tiny"
+            android:background="@drawable/bg_process_bar_orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintWidth_percent="0.35">
+
+            <ImageView
+                android:id="@+id/ivFire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_tiny"
+                android:src="@drawable/ic_today_noto_fire"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFire"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/screen_nutrition_summary_text_calorie"
+                android:textColor="@color/black"
+                android:textSize="@dimen/process_bar_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivFire"
+                app:layout_constraintLeft_toLeftOf="@id/ivFire"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivFire" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvCalorie"
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textSize="@dimen/process_bar_size"
+            app:layout_constraintBottom_toTopOf="@id/pbCalorie"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <ProgressBar
+            android:id="@+id/pbCalorie"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/process_bar_height"
+            android:layout_marginLeft="@dimen/margin_tiny"
+            android:progressDrawable="@drawable/today_progress_bar_calorie"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCarbon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clCalorie">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/process_bar_bg_height"
+            android:layout_marginBottom="@dimen/margin_tiny"
+            android:background="@drawable/bg_process_bar_green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintWidth_percent="0.35">
+
+            <ImageView
+                android:id="@+id/ivWheat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_tiny"
+                android:src="@drawable/ic_today_wheat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvWheat"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/screen_nutrition_summary_text_carbon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/process_bar_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivWheat"
+                app:layout_constraintLeft_toLeftOf="@id/ivWheat"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivWheat" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvCarbon"
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textSize="@dimen/process_bar_size"
+            app:layout_constraintBottom_toTopOf="@id/pbCarbon"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <ProgressBar
+            android:id="@+id/pbCarbon"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/process_bar_height"
+            android:layout_marginLeft="@dimen/margin_tiny"
+            android:progressDrawable="@drawable/today_progress_bar_carbon"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clProtein"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clCarbon">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/process_bar_bg_height"
+            android:layout_marginBottom="@dimen/margin_tiny"
+            android:background="@drawable/bg_process_bar_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintWidth_percent="0.35">
+
+            <ImageView
+                android:id="@+id/ivMeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_tiny"
+                android:src="@drawable/ic_today_meat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMeat"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/screen_today_text_protein"
+                android:textColor="@color/black"
+                android:textSize="@dimen/process_bar_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivMeat"
+                app:layout_constraintLeft_toLeftOf="@id/ivMeat"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivMeat" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvProtein"
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textSize="@dimen/process_bar_size"
+            app:layout_constraintBottom_toTopOf="@id/pbProtein"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <ProgressBar
+            android:id="@+id/pbProtein"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/process_bar_height"
+            android:layout_marginLeft="@dimen/margin_tiny"
+            android:progressDrawable="@drawable/today_progress_bar_protein"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clProtein">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/process_bar_bg_height"
+            android:layout_marginBottom="@dimen/margin_tiny"
+            android:background="@drawable/bg_process_bar_yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintWidth_percent="0.35">
+
+            <ImageView
+                android:id="@+id/ivCheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_tiny"
+                android:src="@drawable/ic_today_cheese"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCheese"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/screen_nutrition_summary_text_fat"
+                android:textColor="@color/black"
+                android:textSize="@dimen/process_bar_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivCheese"
+                app:layout_constraintLeft_toLeftOf="@id/ivCheese"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivCheese" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvFat"
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textSize="@dimen/process_bar_size"
+            app:layout_constraintBottom_toTopOf="@id/pbFat"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <ProgressBar
+            android:id="@+id/pbFat"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/process_bar_height"
+            android:layout_marginLeft="@dimen/margin_tiny"
+            android:progressDrawable="@drawable/today_progress_bar_fat"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clWater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clFat">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/process_bar_bg_height"
+            android:layout_marginBottom="@dimen/margin_tiny"
+            android:background="@drawable/bg_process_bar_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintWidth_percent="0.35">
+
+            <ImageView
+                android:id="@+id/ivWater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                android:layout_marginBottom="@dimen/margin_tiny"
+                android:src="@drawable/ic_today_ion_water"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvWaterTitle"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/screen_nutrition_summary_text_water"
+                android:textColor="@color/black"
+                android:textSize="@dimen/process_bar_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivWater"
+                app:layout_constraintLeft_toLeftOf="@id/ivWater"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivWater" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvWater"
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textSize="@dimen/process_bar_size"
+            app:layout_constraintBottom_toTopOf="@id/pbWater"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <ProgressBar
+            android:id="@+id/pbWater"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/process_bar_height"
+            android:layout_marginLeft="@dimen/margin_tiny"
+            android:progressDrawable="@drawable/today_progress_bar_water"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

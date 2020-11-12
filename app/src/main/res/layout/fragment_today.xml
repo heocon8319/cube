@@ -8,42 +8,14 @@
 
     <!-- TODO: Update blank fragment layout -->
     <!-- Calendar -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
         android:id="@+id/clRowCalendar"
+        layout="@layout/layout_row_calendar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/row_calendar_height"
-        android:background="@drawable/bg_row_calendar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.brickmate.cube.ui.custom.singlerowcalendar.calendar.SingleRowCalendar
-            android:id="@+id/crRowCalendar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/margin_small"
-            app:deselection="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.7"
-            app:longPress="false"
-            app:multiSelection="false" />
-
-        <TextView
-            android:id="@+id/tvMonth"
-            style="@style/title_bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_small"
-            android:layout_marginBottom="@dimen/margin_normal"
-            android:textColor="@color/black"
-            android:textSize="@dimen/month_size"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/crRowCalendar"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Scrollview -->
     <androidx.core.widget.NestedScrollView
@@ -60,60 +32,15 @@
             android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/margin_normal">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- Notice -->
+            <include
                 android:id="@+id/clNote"
+                layout="@layout/layout_today_notice"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/today_view_note"
-                android:background="@drawable/bg_today_note"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/glLeft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.07" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/glLeft"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        android:id="@+id/tvNote1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/jungle_green"
-                        android:textSize="@dimen/today_note_size"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvNote2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/jungle_green"
-                        android:textSize="@dimen/today_note_size"
-                        app:layout_constraintLeft_toLeftOf="@id/tvNote1"
-                        app:layout_constraintTop_toBottomOf="@+id/tvNote1" />
-
-                    <TextView
-                        android:id="@+id/tvNote3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/jungle_green"
-                        android:textSize="@dimen/today_note_size"
-                        app:layout_constraintLeft_toLeftOf="@id/tvNote1"
-                        app:layout_constraintTop_toBottomOf="@id/tvNote2" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/ivTodayCook"
@@ -135,6 +62,7 @@
                 app:layout_constraintLeft_toRightOf="@id/ivTodayCook"
                 app:layout_constraintTop_toTopOf="@id/ivTodayCook" />
 
+            <!-- Notice -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvTodayDiet"
                 android:layout_width="match_parent"
@@ -180,200 +108,27 @@
                 app:layout_constraintTop_toTopOf="@id/ivTodaySearch"
                 app:layout_constraintWidth_percent="0.7" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- Radar Graph -->
+            <include
                 android:id="@+id/clTodayGraph"
+                layout="@layout/layout_today_radar_graph"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/today_view_chart"
                 android:layout_marginTop="@dimen/margin_small"
-                android:background="@drawable/bg_today_chart"
-                android:visibility="visible"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivTodaySearch">
+                app:layout_constraintTop_toBottomOf="@id/ivTodaySearch" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintWidth_percent="0.7">
-
-                    <com.github.mikephil.charting.charts.RadarChart
-                        android:id="@+id/mChart"
-                        android:layout_width="@dimen/radar_chart_height"
-                        android:layout_height="@dimen/radar_chart_height"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvTodayAvgNutri"
-                        style="@style/title_bold"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/logo_size"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="@dimen/margin_small"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <TextView
-                        style="@style/title_medium"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_tiny"
-                        android:text="@string/screen_today_text_compared_avg"
-                        android:textColor="@color/amaranth"
-                        android:textSize="@dimen/title_section_size" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_small"
-                        android:src="@drawable/ic_today_height" />
-
-                    <TextView
-                        android:id="@+id/tvTodayHeight"
-                        style="@style/title_medium"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_small"
-                        android:text="@string/screen_today_text_height"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/today_note_size" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_small"
-                        android:src="@drawable/ic_today_weight" />
-
-                    <TextView
-                        android:id="@+id/tvTodayWeight"
-                        style="@style/title_medium"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_small"
-                        android:text="@string/screen_today_text_weight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/today_note_size" />
-
-
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <LinearLayout
-                android:id="@+id/llStomach"
-                android:layout_width="wrap_content"
+            <!-- Health -->
+            <include
+                android:id="@+id/clBabyHealth"
+                layout="@layout/layout_today_baby_health"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_normal"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:background="@drawable/bg_today_health_white"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@id/vBottom"
-                app:layout_constraintEnd_toStartOf="@+id/llThermometer"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_stomach" />
-
-                <TextView
-                    android:id="@+id/tvStomach"
-                    style="@style/title_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/screen_baby_health_text_stomach"
-                    android:textAlignment="center"
-                    android:textColor="@color/rolling_stone"
-                    android:textSize="@dimen/today_note_size" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/llThermometer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_normal"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:background="@drawable/bg_today_health_white"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@id/vBottom"
-                app:layout_constraintEnd_toStartOf="@+id/llToilet"
-                app:layout_constraintStart_toEndOf="@+id/llStomach"
-                app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_thermometer" />
-
-                <TextView
-                    android:id="@+id/tvThermometer"
-                    style="@style/title_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/screen_baby_health_text_thermometer"
-                    android:textColor="@color/rolling_stone"
-                    android:textSize="@dimen/today_note_size" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/llToilet"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_normal"
-                android:layout_marginTop="@dimen/margin_normal"
-                android:background="@drawable/bg_today_health_white"
-                android:gravity="center"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@id/vBottom"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/llThermometer"
-                app:layout_constraintTop_toBottomOf="@id/clTodayGraph">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_toilet" />
-
-                <TextView
-                    android:id="@+id/tvToilet"
-                    style="@style/title_medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/screen_baby_health_text_toilet"
-                    android:textColor="@color/rolling_stone"
-                    android:textSize="@dimen/today_note_size" />
-            </LinearLayout>
-
-            <View
-                android:id="@+id/vBottom"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/padding_scroll_view"
-                android:layout_marginBottom="@dimen/padding_scroll_view"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/margin_small"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clTodayGraph" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
