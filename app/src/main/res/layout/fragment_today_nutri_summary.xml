@@ -12,26 +12,195 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
-    <!-- Process bar -->
-    <include
-        android:id="@+id/clProcessBar"
-        layout="@layout/layout_today_process_bar"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_large"
-        android:visibility="gone"
+        android:fillViewport="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/glTop" />
+        app:layout_constraintTop_toBottomOf="@id/glTop">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChart"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/ivSection1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_small"
+                android:src="@drawable/ic_process_bar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/screen_nutrition_summary_text_nutri_intake"
+                android:textColor="@color/jungle_green"
+                android:textSize="@dimen/title_section_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivSection1"
+                app:layout_constraintLeft_toRightOf="@id/ivSection1"
+                app:layout_constraintTop_toTopOf="@id/ivSection1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSection1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/nutri_section_height"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/bg_nutri_section"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivSection1"
+                app:layout_constraintWidth_percent="0.35">
+
+                <TextView
+                    style="@style/title_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/screen_nutrition_summary_text_three_major"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/process_bar_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Process bar -->
+            <include
+                android:id="@+id/clProcessBar"
+                layout="@layout/layout_today_process_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:layout_marginTop="@dimen/margin_small"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clSection1" />
+
+            <ImageView
+                android:id="@+id/ivSection2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/ic_bar_chart"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clProcessBar" />
+
+            <TextView
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/screen_nutrition_summary_text_vitamin_intake"
+                android:textColor="@color/jungle_green"
+                android:textSize="@dimen/title_section_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivSection2"
+                app:layout_constraintLeft_toRightOf="@id/ivSection2"
+                app:layout_constraintTop_toTopOf="@id/ivSection2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSection2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/nutri_section_height"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/bg_nutri_section"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivSection2"
+                app:layout_constraintWidth_percent="0.35">
+
+                <TextView
+                    style="@style/title_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/screen_nutrition_summary_text_daily_amount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/process_bar_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bcVitamin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bar_chart_height"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clSection2" />
+
+            <ImageView
+                android:id="@+id/ivSection3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_large"
+                android:src="@drawable/ic_water_green"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bcVitamin" />
+
+            <TextView
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/screen_nutrition_summary_text_mineral_intake"
+                android:textColor="@color/jungle_green"
+                android:textSize="@dimen/title_section_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivSection3"
+                app:layout_constraintLeft_toRightOf="@id/ivSection3"
+                app:layout_constraintTop_toTopOf="@id/ivSection3" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSection3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/nutri_section_height"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@drawable/bg_nutri_section"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivSection3"
+                app:layout_constraintWidth_percent="0.35">
+
+                <TextView
+                    style="@style/title_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/screen_nutrition_summary_text_daily_amount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/process_bar_size"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bcMineral"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bar_chart_height"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                app:layout_constraintBottom_toTopOf="@id/vBottom"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clSection3" />
+
+            <View
+                android:id="@+id/vBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/padding_scroll_view"
+                android:layout_marginBottom="@dimen/padding_scroll_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

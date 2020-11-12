@@ -119,6 +119,11 @@ class TodayFragment : BaseFragment() {
                 clRowCalendar.tvMonth.text = DateUtils.getMonthNumber(date)
                 super.whenSelectionChanged(isSelected, position, date)
             }
+
+            override fun whenWeekMonthYearChanged(weekNumber: String, monthNumber: String, monthName: String, year: String, date: Date) {
+                clRowCalendar.tvMonth.text = DateUtils.getMonthNumber(date)
+                super.whenWeekMonthYearChanged(weekNumber, monthNumber, monthName, year, date)
+            }
         }
 
         val rowCalendarSelectionManager = object : CalendarSelectionManager {

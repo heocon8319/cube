@@ -1,12 +1,9 @@
 package com.brickmate.cube.ui.main.view
 
-import android.graphics.Typeface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
 import com.brickmate.cube.ui.base.BaseFragment
-import com.github.mikephil.charting.components.Legend
-import com.github.mikephil.charting.components.Legend.LegendForm
 import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.LimitLine.LimitLabelPosition
 import com.github.mikephil.charting.components.XAxis
@@ -65,49 +62,108 @@ class TodayNutriSummaryFragment : BaseFragment() {
     }
 
     private fun initBarChart() {
-        val barDataSet = BarDataSet(getData(), "")
+        initVitaminBarChart()
+        initMineralBarChart()
+    }
+
+    private fun initVitaminBarChart(){
+        val barDataSet = BarDataSet(getDataVitamin(), "")
         barDataSet.setDrawValues(false);
         barDataSet.setColor(resources.getColor(R.color.fire_bush), 255)
 
         val barData = BarData(barDataSet)
         barData.barWidth = 0.2f
 
+        //Line 100%
         val ll1 = LimitLine(100f, "100%")
+        ll1.lineWidth = 0.8f
+        ll1.enableDashedLine(10f, 10f, 0f)
+        ll1.labelPosition = LimitLabelPosition.RIGHT_TOP
+        ll1.lineColor = resources.getColor(R.color.jungle_green)
+        ll1.textSize = 10f
+
+        //X
+        val xAxis = bcVitamin.xAxis
+        xAxis.position = XAxis.XAxisPosition.BOTTOM
+        xAxis.setDrawGridLines(false)
+        xAxis.axisLineWidth = 0.8f
+        xAxis.axisLineColor = resources.getColor(R.color.fire_bush)
+        val months = arrayOf("A", "B6", "B12", "C", "D", "E", "K", "")
+        val formatter = IndexAxisValueFormatter(months)
+        xAxis.valueFormatter = formatter
+
+        //Y
+        val leftAxis: YAxis = bcVitamin.axisLeft
+        leftAxis.removeAllLimitLines();
+        leftAxis.addLimitLine(ll1)
+        leftAxis.setDrawGridLines(false)
+        leftAxis.setDrawAxisLine(false)
+        leftAxis.isEnabled = true
+        leftAxis.setDrawLabels(false)
+
+        //Start zero
+        bcVitamin.axisLeft.axisMinimum = 0f;
+        bcVitamin.axisRight.axisMinimum = 0f;
+
+        bcVitamin.axisRight.isEnabled = false
+
+        // add data
+        bcVitamin.data = barData
+        bcVitamin.legend.isEnabled = false
+        bcVitamin.description.isEnabled = false
+        bcVitamin.setFitBars(true);
+        bcVitamin.invalidate();
+    }
+
+    private fun initMineralBarChart(){
+        val barDataSet = BarDataSet(getDataMineral(), "")
+        barDataSet.setDrawValues(false);
+        barDataSet.setColor(resources.getColor(R.color.fire_bush), 255)
+
+        val barData = BarData(barDataSet)
+        barData.barWidth = 0.2f
+
+        //Line 100%
+        val ll1 = LimitLine(60f, "100%")
         ll1.lineWidth = 0.5f
         ll1.enableDashedLine(10f, 10f, 0f)
         ll1.labelPosition = LimitLabelPosition.RIGHT_TOP
         ll1.lineColor = resources.getColor(R.color.jungle_green)
         ll1.textSize = 10f
 
-        val xAxis = barChart.xAxis
+        //X
+        val xAxis = bcMineral.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.setDrawGridLines(false)
-
         xAxis.axisLineColor = resources.getColor(R.color.fire_bush)
-        val months = arrayOf("A", "B6", "B12", "C", "D", "E", "K", "2")
+        val months = arrayOf("철분", "칼슘", "칼륨", "마그네슘C", "나트륨", "식이섬유", "")
         val formatter = IndexAxisValueFormatter(months)
         xAxis.valueFormatter = formatter
 
-        val leftAxis: YAxis = barChart.axisLeft
+        //Y
+        val leftAxis: YAxis = bcMineral.axisLeft
         leftAxis.removeAllLimitLines();
         leftAxis.addLimitLine(ll1)
         leftAxis.setDrawGridLines(false)
         leftAxis.setDrawAxisLine(false)
         leftAxis.isEnabled = true
-        leftAxis.setDrawLabels(true)
+        leftAxis.setDrawLabels(false)
 
-        barChart.axisRight.isEnabled = false
+        //Start zero
+        bcMineral.axisLeft.axisMinimum = 0f;
+        bcMineral.axisRight.axisMinimum = 0f;
+
+        bcMineral.axisRight.isEnabled = false
 
         // add data
-        barChart.data = barData
-        barChart.legend.isEnabled = false
-        barChart.description.isEnabled = false
-        barChart.setFitBars(true);
-        barChart.invalidate();
-
+        bcMineral.data = barData
+        bcMineral.legend.isEnabled = false
+        bcMineral.description.isEnabled = false
+        bcMineral.setFitBars(true);
+        bcMineral.invalidate();
     }
 
-    private fun getData(): ArrayList<BarEntry>? {
+    private fun getDataVitamin(): ArrayList<BarEntry>? {
         val entries: ArrayList<BarEntry> = ArrayList()
         entries.add(BarEntry(0f, 80f))
         entries.add(BarEntry(1f, 110f))
@@ -116,6 +172,19 @@ class TodayNutriSummaryFragment : BaseFragment() {
         entries.add(BarEntry(4f, 110f))
         entries.add(BarEntry(5f, 110f))
         entries.add(BarEntry(6f, 110f))
+        entries.add(BarEntry(7f, 0f))
+        return entries
+    }
+
+    private fun getDataMineral(): ArrayList<BarEntry>? {
+        val entries: ArrayList<BarEntry> = ArrayList()
+        entries.add(BarEntry(0f, 30f))
+        entries.add(BarEntry(1f, 20f))
+        entries.add(BarEntry(2f, 56f))
+        entries.add(BarEntry(3f, 15f))
+        entries.add(BarEntry(4f, 40f))
+        entries.add(BarEntry(5f, 70f))
+        entries.add(BarEntry(6f, 0f))
         return entries
     }
 

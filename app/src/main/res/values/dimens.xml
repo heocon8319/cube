@@ -30,6 +30,8 @@
     <dimen name="today_view_chart">250dp</dimen>
     <dimen name="process_bar_bg_height">35dp</dimen>
     <dimen name="process_bar_height">12dp</dimen>
+    <dimen name="bar_chart_height">150dp</dimen>
+    <dimen name="nutri_section_height">35dp</dimen>
 
 
     //Text Size

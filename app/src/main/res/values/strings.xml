@@ -96,11 +96,16 @@
     <string name="screen_today_text_avg_height_weight">평균 신장: %1$.2f cm  / 평균 몸무게: %2$.2f kg</string>
 
     //Today - Nutrition Summary
+    <string name="screen_nutrition_summary_text_nutri_intake">영양섭취 통계</string>
+    <string name="screen_nutrition_summary_text_three_major">3대 영양소, 물</string>
     <string name="screen_nutrition_summary_text_calorie">칼로리</string>
     <string name="screen_nutrition_summary_text_carbon">탄수화물</string>
     <string name="screen_nutrition_summary_text_protein">단백질</string>
     <string name="screen_nutrition_summary_text_fat">지방</string>
     <string name="screen_nutrition_summary_text_water">물</string>
+    <string name="screen_nutrition_summary_text_vitamin_intake">비타민 섭취</string>
+    <string name="screen_nutrition_summary_text_daily_amount">일일권장량</string>
+    <string name="screen_nutrition_summary_text_mineral_intake">무기질 섭취</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
