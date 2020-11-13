@@ -3,8 +3,10 @@ package com.brickmate.cube.ui.login.view
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
+import com.brickmate.cube.sharedPrefs
 import com.brickmate.cube.ui.base.BaseFragment
 import com.brickmate.cube.utils.TAG
+import kotlinx.android.synthetic.main.fragment_baby_name.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,8 +41,13 @@ class BabyNameFragment : BaseFragment() {
 
     override fun onNextArrowPressed() {
         super.onNextArrowPressed()
+        getData()
         val fragDes = MainTermFragment.newInstance()
         navigateToFragment(fragDes, fragDes.TAG())
+    }
+
+    private fun getData() {
+        sharedPrefs.setBabyName(edBabyName.text.toString())
     }
 
     companion object {

@@ -65,7 +65,7 @@ class SharedPrefUtils(context: Context) {
         return sp.getString(BIRTHDAY, "")
     }
 
-    fun setHeight(value: Double){
+    fun setHeight(value: Double) {
         sp.edit().putLong(HEIGHT, doubleToRawLongBits(value)).apply()
     }
 
@@ -73,12 +73,20 @@ class SharedPrefUtils(context: Context) {
         return longBitsToDouble(sp.getLong(HEIGHT, doubleToLongBits(0.0)))
     }
 
-    fun setWeight(value: Double){
+    fun setWeight(value: Double) {
         sp.edit().putLong(WEIGHT, doubleToRawLongBits(value)).apply()
     }
 
     fun getWeight(): Double {
         return longBitsToDouble(sp.getLong(WEIGHT, doubleToLongBits(0.0)))
+    }
+
+    fun setAvatar(avatar: String?) {
+        sp.edit().putString(AVATAR, avatar).apply()
+    }
+
+    fun getAvatar(): String? {
+        return sp.getString(AVATAR, "")
     }
 
     fun setGoodIngredients(list: ArrayList<String>) {
@@ -131,7 +139,6 @@ class SharedPrefUtils(context: Context) {
 
     //region baby
 
-
     //endregion
 
     companion object {
@@ -143,6 +150,7 @@ class SharedPrefUtils(context: Context) {
         const val BIRTHDAY = "BIRTHDAY"
         const val HEIGHT = "HEIGHT"
         const val WEIGHT = "WEIGHT"
+        const val AVATAR = "AVATAR"
         const val GOOD_INGREDIENT = "GOOD_INGREDIENT"
         const val ADVERSE_INGREDIENT = "ADVERSE_INGREDIENT"
         const val CONSTIPATION = "CONSTIPATION"

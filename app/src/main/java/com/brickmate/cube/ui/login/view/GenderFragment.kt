@@ -3,9 +3,12 @@ package com.brickmate.cube.ui.login.view
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import com.brickmate.cube.BabyGender
 import com.brickmate.cube.R
+import com.brickmate.cube.sharedPrefs
 import com.brickmate.cube.ui.base.BaseFragment
 import com.brickmate.cube.utils.TAG
+import kotlinx.android.synthetic.main.fragment_baby_name.*
 import kotlinx.android.synthetic.main.fragment_gender.*
 
 
@@ -26,6 +29,7 @@ class GenderFragment : BaseFragment() {
 
     private var isBoyMultiTime: Boolean = false
     private var isGirlMultiTime: Boolean = false
+    private var isGirl = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +50,10 @@ class GenderFragment : BaseFragment() {
     private fun initListener() {
         ivBoy.setOnClickListener {
             if (!isBoyMultiTime) {
+                isGirl = false
                 ivBoy.setImageResource(R.drawable.ic_boy_enable)
                 ivGirl.setImageResource(R.drawable.ic_girl_disable)
-                updateImageBG(false)
+                updateImageBG(isGirl)
                 isBoyMultiTime = true
                 isGirlMultiTime = false
             }
@@ -56,9 +61,10 @@ class GenderFragment : BaseFragment() {
 
         ivGirl.setOnClickListener {
             if (!isGirlMultiTime) {
+                isGirl = true
                 ivGirl.setImageResource(R.drawable.ic_girl_enable)
                 ivBoy.setImageResource(R.drawable.ic_boy_disable)
-                updateImageBG(true)
+                updateImageBG(isGirl)
                 isBoyMultiTime = false
                 isGirlMultiTime = true
             }
@@ -80,8 +86,14 @@ class GenderFragment : BaseFragment() {
 
     override fun onNextArrowPressed() {
         super.onNextArrowPressed()
+        getData()
         val fragDes = DayOfBirthFragment.newInstance()
         navigateToFragment(fragDes, fragDes.TAG())
+    }
+
+    private fun getData() {
+        val gender = if (isGirl) BabyGender.FEMALE else BabyGender.MALE
+        sharedPrefs.setBabyGender(gender.toString())
     }
 
     companion object {

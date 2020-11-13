@@ -11,6 +11,7 @@ import com.brickmate.cube.sharedPrefs
 import com.brickmate.cube.ui.base.BaseFragment
 import com.brickmate.cube.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_baby_health.*
+import kotlinx.android.synthetic.main.fragment_baby_name.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,6 +28,10 @@ class BabyHealthFragment : BaseFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    var isStomachSelected: Boolean = false
+    var isThermometerSelected: Boolean = false
+    var isToiletSelected: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,10 +59,6 @@ class BabyHealthFragment : BaseFragment() {
     }
 
     private fun initListener() {
-        var isStomachSelected: Boolean = false
-        var isThermometerSelected: Boolean = false
-        var isToiletSelected: Boolean = false
-
         llStomach.setOnClickListener {
             isStomachSelected = !isStomachSelected
             setLayoutButton(isStomachSelected, llStomach)
@@ -77,6 +78,7 @@ class BabyHealthFragment : BaseFragment() {
 
     override fun onNextArrowPressed() {
         super.onNextArrowPressed()
+        getData()
         val intent = Intent(activity, MainActivity::class.java)
         startActivity(intent)
         activity.finish()
@@ -99,6 +101,13 @@ class BabyHealthFragment : BaseFragment() {
             textView.setTextColor(resources.getColor(R.color.white))
         }
     }
+
+    private fun getData() {
+        sharedPrefs.setCold(isThermometerSelected)
+        sharedPrefs.setConstipation(isStomachSelected)
+        sharedPrefs.setDiarrhea(isToiletSelected)
+    }
+
 
     companion object {
         /**

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.brickmate.cube.R
 import com.brickmate.cube.model.TodayMeal
+import com.brickmate.cube.sharedPrefs
 import com.brickmate.cube.ui.base.BaseFragment
 import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.CalendarChangesObserver
 import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.CalendarViewManager
@@ -54,6 +55,10 @@ class TodayFragment : BaseFragment() {
     private val scores = SparseIntArray(5)
     private val entries: ArrayList<RadarEntry> = ArrayList()
     private val dataSets: ArrayList<IRadarDataSet> = ArrayList()
+
+    var isStomachSelected: Boolean = sharedPrefs.getConstipation()
+    var isThermometerSelected: Boolean = sharedPrefs.getCold()
+    var isToiletSelected: Boolean = sharedPrefs.getDiarrhea()
 
 
     override fun layoutId() = R.layout.fragment_today
@@ -257,9 +262,17 @@ class TodayFragment : BaseFragment() {
 
         clTodayGraph.tvTodayAvgNutri.text = "79"
 
-        tvTodayHeightWeight.text = String.format(resources.getString(R.string.screen_today_text_avg_height_weight), 74.1f, 12.9f)
+        tvTodayHeightWeight.text =
+            String.format(resources.getString(R.string.screen_today_text_avg_height_weight), sharedPrefs.getHeight(), sharedPrefs.getWeight())
         clTodayGraph.tvTodayHeight.text = String.format(resources.getString(R.string.screen_today_text_height), "+", 2.9f)
         clTodayGraph.tvTodayWeight.text = String.format(resources.getString(R.string.screen_today_text_weight), "-", 0.58f)
+
+        setLayoutButton(isStomachSelected, clBabyHealth.llStomach)
+        setTextColor(isStomachSelected, clBabyHealth.tvStomach)
+        setLayoutButton(isThermometerSelected, clBabyHealth.llThermometer)
+        setTextColor(isThermometerSelected, clBabyHealth.tvThermometer)
+        setLayoutButton(isToiletSelected, clBabyHealth.llToilet)
+        setTextColor(isToiletSelected, clBabyHealth.tvToilet)
     }
 
     private fun initListener() {
@@ -267,10 +280,6 @@ class TodayFragment : BaseFragment() {
             val fragDes = TodayNutriSummaryFragment.newInstance()
             navigateToFragment(fragDes, fragDes.TAG())
         }
-
-        var isStomachSelected: Boolean = false
-        var isThermometerSelected: Boolean = false
-        var isToiletSelected: Boolean = false
         clBabyHealth.llStomach.setOnClickListener {
             isStomachSelected = !isStomachSelected
             setLayoutButton(isStomachSelected, clBabyHealth.llStomach)
