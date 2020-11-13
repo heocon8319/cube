@@ -136,8 +136,8 @@ class TodayFragment : BaseFragment() {
             calendarViewManager = rowCalendarViewManager
             calendarChangesObserver = rowCalendarChangesObserver
             calendarSelectionManager = rowCalendarSelectionManager
-            futureDaysCount = 500
-            pastDaysCount = 500
+            futureDaysCount = 365
+            pastDaysCount = 365
             includeCurrentDate = true
             init()
         }

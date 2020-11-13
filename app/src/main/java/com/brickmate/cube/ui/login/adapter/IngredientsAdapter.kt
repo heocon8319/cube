@@ -41,7 +41,7 @@ class IngredientsAdapter(private val ingredients: ArrayList<Ingredient>) :
         }
         val item = ingredients[position]
         holder.name?.text = item.name
-        holder.name?.setTextColor(item.getTextColor())
+        parent?.resources?.getColor(item.getTextColor())?.let { holder.name?.setTextColor(it) }
         holder.background?.setBackgroundResource(item.getLayout())
 
         return myView!!

@@ -14,18 +14,8 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.Cube.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-<!--        <item name="android:windowFullscreen">true</item>-->
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-    </style>
-
     <style name="Theme.Cube.NoActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-
         <item name="colorPrimary">@color/jungle_green</item>
         <item name="colorPrimaryVariant">@color/jungle_green</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -35,5 +25,13 @@
         <item name="android:windowContentOverlay">@null</item>
         <!--        <item name="android:windowTranslucentStatus">true</item>-->
         <!--        <item name="android:windowTranslucentNavigation">true</item>-->
+    </style>
+
+    <style name="Theme.Cube.NoActionBar.Fullscreen" parent="Theme.Cube.NoActionBar">
+<!--        <item name="android:actionBarStyle">@style/Widget.Theme.Cube.NoActionBar.ActionBar.Fullscreen</item>-->
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>

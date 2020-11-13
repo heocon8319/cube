@@ -72,7 +72,7 @@ class GoodIngredientsFragment : BaseFragment() {
             imageView.setBackgroundResource(selectedItem.getLayout())
 
             val textView: TextView = (v.tag as IngredientsAdapter.ItemHolder).name!!
-            textView.setTextColor(selectedItem.getTextColor())
+            textView. setTextColor(resources.getColor(selectedItem.getTextColor()))
         }
     }
 

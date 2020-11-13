@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="50dp"
+    android:layout_height="60dp"
+    android:layout_marginRight="@dimen/margin_small">
+
+    <TextView
+        android:id="@+id/tvDay"
+        style="@style/title_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_row_calendar_text"
+        android:text="MON"
+        android:textColor="@color/black"
+        android:textSize="@dimen/row_calendar_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbDaySelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_tiny"
+        android:textColor="@color/black"
+        android:textSize="@dimen/row_calendar_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

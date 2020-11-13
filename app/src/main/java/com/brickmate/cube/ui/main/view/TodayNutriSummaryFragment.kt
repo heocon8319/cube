@@ -46,6 +46,7 @@ class TodayNutriSummaryFragment : BaseFragment() {
 
         initProcessBar()
         initBarChart()
+        initCustomCalendar()
     }
 
     private fun initProcessBar() {
@@ -186,6 +187,9 @@ class TodayNutriSummaryFragment : BaseFragment() {
         entries.add(BarEntry(5f, 70f))
         entries.add(BarEntry(6f, 0f))
         return entries
+    }
+
+    private fun initCustomCalendar(){
     }
 
     companion object {
