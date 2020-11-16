@@ -1,17 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
-    <com.kizitonwose.calendarview.CalendarView
-        android:id="@+id/calendarView"
+    <!-- date toolbar -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cv_dayViewResource="@layout/layout_item_custom_calendar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        android:paddingHorizontal="@dimen/margin_normal"
+        android:paddingVertical="@dimen/margin_small">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- prev button -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back" />
+
+        <!-- date title -->
+        <TextView
+            android:id="@+id/tvTitleCalendar"
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btnNext"
+            android:layout_toRightOf="@+id/btnBack"
+            android:gravity="center"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size" />
+
+        <!-- next button -->
+        <ImageView
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_next" />
+    </RelativeLayout>
+
+    <!-- days header -->
+    <LinearLayout
+        android:id="@+id/llHeaderDate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_date_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="S"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size" />
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="M"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size" />
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="T"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size" />
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="W"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size" />
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="T"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size" />
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size" />
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="S"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_small_size" />
+    </LinearLayout>
+
+    <!-- days view -->
+    <GridView
+        android:id="@+id/gvCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:numColumns="7" />
+</LinearLayout>

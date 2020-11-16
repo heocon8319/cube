@@ -22,4 +22,9 @@
             <enum name="never" value="2" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="CustomCalendarView">
+        <attr name="dateFormat" format="string"/>
+    </declare-styleable>
+
 </resources>
