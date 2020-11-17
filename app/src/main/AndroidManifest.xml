@@ -26,9 +26,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.login.CropImageActivity"></activity>
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".ui.main.MainActivity">
 
             <!-- <intent-filter> -->

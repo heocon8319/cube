@@ -187,7 +187,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/bar_chart_height"
                 android:layout_marginHorizontal="@dimen/margin_large"
-                android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@id/vBottom"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -199,17 +198,6 @@
                 android:layout_height="@dimen/custom_calendar_height"
                 android:layout_marginHorizontal="@dimen/margin_large"
                 android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@id/vBottom"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clSection3" />
-
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/lcNutri"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/line_chart_height"
-                android:layout_marginHorizontal="@dimen/margin_large"
-                android:visibility="visible"
                 app:layout_constraintBottom_toTopOf="@id/vBottom"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

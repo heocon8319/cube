@@ -31,10 +31,15 @@
     <dimen name="process_bar_bg_height">35dp</dimen>
     <dimen name="process_bar_height">12dp</dimen>
     <dimen name="bar_chart_height">150dp</dimen>
-    <dimen name="line_chart_height">250dp</dimen>
+    <dimen name="line_chart_height">170dp</dimen>
+    <dimen name="icon_add_minus_height">25dp</dimen>
     <dimen name="nutri_section_height">35dp</dimen>
     <dimen name="header_date_height">40dp</dimen>
     <dimen name="custom_calendar_height">450dp</dimen>
+    <dimen name="dialog_max_height">600dp</dimen>
+    <dimen name="dialog_max_width">300dp</dimen>
+    <dimen name="dialog_radius">30dp</dimen>
+    <dimen name="top_dialog_height">50dp</dimen>
 
 
     //Text Size

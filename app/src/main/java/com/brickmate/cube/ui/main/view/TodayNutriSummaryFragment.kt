@@ -8,13 +8,10 @@ import com.github.mikephil.charting.components.LimitLine
 import com.github.mikephil.charting.components.LimitLine.LimitLabelPosition
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.components.YAxis
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import kotlinx.android.synthetic.main.fragment_today_nutri_summary.*
 import kotlinx.android.synthetic.main.layout_today_process_bar.view.*
-
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,7 +43,6 @@ class TodayNutriSummaryFragment : BaseFragment() {
 
         initProcessBar()
         initBarChart()
-        initCustomCalendar()
     }
 
     private fun initProcessBar() {
@@ -67,9 +63,9 @@ class TodayNutriSummaryFragment : BaseFragment() {
         initMineralBarChart()
     }
 
-    private fun initVitaminBarChart(){
+    private fun initVitaminBarChart() {
         val barDataSet = BarDataSet(getDataVitamin(), "")
-        barDataSet.setDrawValues(false);
+        barDataSet.setDrawValues(false)
         barDataSet.setColor(resources.getColor(R.color.fire_bush), 255)
 
         val barData = BarData(barDataSet)
@@ -95,7 +91,7 @@ class TodayNutriSummaryFragment : BaseFragment() {
 
         //Y
         val leftAxis: YAxis = bcVitamin.axisLeft
-        leftAxis.removeAllLimitLines();
+        leftAxis.removeAllLimitLines()
         leftAxis.addLimitLine(ll1)
         leftAxis.setDrawGridLines(false)
         leftAxis.setDrawAxisLine(false)
@@ -103,8 +99,8 @@ class TodayNutriSummaryFragment : BaseFragment() {
         leftAxis.setDrawLabels(false)
 
         //Start zero
-        bcVitamin.axisLeft.axisMinimum = 0f;
-        bcVitamin.axisRight.axisMinimum = 0f;
+        bcVitamin.axisLeft.axisMinimum = 0f
+        bcVitamin.axisRight.axisMinimum = 0f
 
         bcVitamin.axisRight.isEnabled = false
 
@@ -112,13 +108,13 @@ class TodayNutriSummaryFragment : BaseFragment() {
         bcVitamin.data = barData
         bcVitamin.legend.isEnabled = false
         bcVitamin.description.isEnabled = false
-        bcVitamin.setFitBars(true);
-        bcVitamin.invalidate();
+        bcVitamin.setFitBars(true)
+        bcVitamin.invalidate()
     }
 
-    private fun initMineralBarChart(){
+    private fun initMineralBarChart() {
         val barDataSet = BarDataSet(getDataMineral(), "")
-        barDataSet.setDrawValues(false);
+        barDataSet.setDrawValues(false)
         barDataSet.setColor(resources.getColor(R.color.fire_bush), 255)
 
         val barData = BarData(barDataSet)
@@ -143,7 +139,7 @@ class TodayNutriSummaryFragment : BaseFragment() {
 
         //Y
         val leftAxis: YAxis = bcMineral.axisLeft
-        leftAxis.removeAllLimitLines();
+        leftAxis.removeAllLimitLines()
         leftAxis.addLimitLine(ll1)
         leftAxis.setDrawGridLines(false)
         leftAxis.setDrawAxisLine(false)
@@ -151,8 +147,8 @@ class TodayNutriSummaryFragment : BaseFragment() {
         leftAxis.setDrawLabels(false)
 
         //Start zero
-        bcMineral.axisLeft.axisMinimum = 0f;
-        bcMineral.axisRight.axisMinimum = 0f;
+        bcMineral.axisLeft.axisMinimum = 0f
+        bcMineral.axisRight.axisMinimum = 0f
 
         bcMineral.axisRight.isEnabled = false
 
@@ -160,8 +156,8 @@ class TodayNutriSummaryFragment : BaseFragment() {
         bcMineral.data = barData
         bcMineral.legend.isEnabled = false
         bcMineral.description.isEnabled = false
-        bcMineral.setFitBars(true);
-        bcMineral.invalidate();
+        bcMineral.setFitBars(true)
+        bcMineral.invalidate()
     }
 
     private fun getDataVitamin(): ArrayList<BarEntry>? {
@@ -187,9 +183,6 @@ class TodayNutriSummaryFragment : BaseFragment() {
         entries.add(BarEntry(5f, 70f))
         entries.add(BarEntry(6f, 0f))
         return entries
-    }
-
-    private fun initCustomCalendar(){
     }
 
     companion object {

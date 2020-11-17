@@ -13,14 +13,13 @@ import com.brickmate.cube.utils.replaceFragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_baby_avatar.*
 import kotlinx.android.synthetic.main.layout_action_bar_main.view.*
 
 class MainActivity : BaseActivity() {
     override fun layoutId() = R.layout.activity_main
 
-//    override fun fragment() = TodayFragment.newInstance()
-    override fun fragment() = TodayNutriSummaryFragment.newInstance()
+    override fun fragment() = TodayFragment.newInstance()
+//    override fun fragment() = TodayNutriSummaryFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

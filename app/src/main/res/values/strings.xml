@@ -107,6 +107,16 @@
     <string name="screen_nutrition_summary_text_daily_amount">일일권장량</string>
     <string name="screen_nutrition_summary_text_mineral_intake">무기질 섭취</string>
 
+    // Dialog measure history
+    <string name="dialog_measure_history_text_growth_record">성장기록</string>
+    <string name="dialog_measure_history_text_up_5">상위 백분위 5%</string>
+    <string name="dialog_measure_history_text_down_5">하위 백분위 5%</string>
+    <string name="dialog_measure_history_text_daily">일</string>
+    <string name="dialog_measure_history_text_weekly">주</string>
+    <string name="dialog_measure_history_text_monthly">월</string>
+    <string name="dialog_measure_history_text_height">신장</string>
+    <string name="dialog_measure_history_text_weight">몸무게</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>

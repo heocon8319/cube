@@ -17,6 +17,7 @@ import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.SingleRowCalendar
 import com.brickmate.cube.ui.custom.singlerowcalendar.selection.CalendarSelectionManager
 import com.brickmate.cube.ui.custom.singlerowcalendar.utils.DateUtils
 import com.brickmate.cube.ui.main.adapter.TodayMealAdapter
+import com.brickmate.cube.ui.main.view.dialog.TodayMeasureHistoryDialog
 import com.brickmate.cube.utils.TAG
 import com.brickmate.cube.utils.toast
 import com.github.mikephil.charting.data.RadarData
@@ -276,9 +277,18 @@ class TodayFragment : BaseFragment() {
     }
 
     private fun initListener() {
-        clTodayGraph.setOnClickListener {
+        clRowCalendar.tvMonth.setOnClickListener {
+            //show dialog calendar
+
+        }
+        clTodayGraph.mChart.setOnClickListener {
             val fragDes = TodayNutriSummaryFragment.newInstance()
             navigateToFragment(fragDes, fragDes.TAG())
+        }
+        clTodayGraph.setOnClickListener {
+            //show dialog measure history
+            val fragDes = TodayMeasureHistoryDialog.newInstance()
+            fragDes.show(activity.supportFragmentManager, fragDes.TAG())
         }
         clBabyHealth.llStomach.setOnClickListener {
             isStomachSelected = !isStomachSelected
