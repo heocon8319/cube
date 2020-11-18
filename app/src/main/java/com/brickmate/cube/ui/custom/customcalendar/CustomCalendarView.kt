@@ -24,7 +24,7 @@ class CalendarView : LinearLayout {
     private var dateFormat: String? = null
 
     // current displayed month
-    private val currentDate: Calendar = Calendar.getInstance()
+    private var currentDate: Calendar = Calendar.getInstance()
 
     // list date is selected
     private var listSelected = ArrayList<Date>()
@@ -36,6 +36,11 @@ class CalendarView : LinearLayout {
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         initControl(context, attrs)
+    }
+
+    fun setCalendar(calendar : Calendar){
+        currentDate = calendar
+        updateCalendar()
     }
 
     /**

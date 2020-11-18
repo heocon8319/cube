@@ -116,6 +116,17 @@
     <string name="dialog_measure_history_text_monthly">월</string>
     <string name="dialog_measure_history_text_height">신장</string>
     <string name="dialog_measure_history_text_weight">몸무게</string>
+    <string name="dialog_measure_history_text_value_height">%2$.2f cm</string>
+    <string name="dialog_measure_history_text_value_weight">%2$.2f kg</string>
+
+    // Dialog calendar
+    <string name="dialog_calendar_text_close">Close</string>
+    <string name="dialog_calendar_text_value_height">%1$s %2$.2f cm</string>
+    <string name="dialog_calendar_text_value_weight">%1$s %2$.2f kg</string>
+    <string name="dialog_calendar_text_height">키</string>
+    <string name="dialog_calendar_text_weight">몸무게</string>
+    <string name="dialog_calendar_text_nutrition">영양달성</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:paddingBottom="@dimen/margin_normal"
+    android:maxHeight="@dimen/dialog_max_height">
+
+    <View
+        android:id="@+id/clTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_dialog_height"
+        android:background="@drawable/bg_top_dialog"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvClose"
+        style="@style/title_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:text="@string/dialog_calendar_text_close"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_small_size"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.brickmate.cube.ui.custom.customcalendar.CalendarView
+        android:id="@+id/cvCustomCalendar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_small"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clTop"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <LinearLayout
+        android:id="@+id/llNutrition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/llWeight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvCustomCalendar">
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_calendar_text_nutrition"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_icon_calendar_size" />
+
+        <ImageView
+            android:layout_width="@dimen/icon_calendar_dialog_height"
+            android:layout_height="@dimen/icon_calendar_dialog_height"
+            android:src="@drawable/ic_calendar_check" />
+
+        <TextView
+            android:id="@+id/tvCountDay"
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_calendar_text_nutrition"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/text_icon_calendar_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/llHeight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/llNutrition"
+        app:layout_constraintTop_toTopOf="@id/llNutrition">
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_calendar_text_weight"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_icon_calendar_size" />
+
+        <ImageView
+            android:layout_width="@dimen/icon_calendar_dialog_height"
+            android:layout_height="@dimen/icon_calendar_dialog_height"
+            android:src="@drawable/ic_calendar_weight" />
+
+        <TextView
+            android:id="@+id/tvWeight"
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_calendar_text_value_weight"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/text_icon_calendar_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/llWeight"
+        app:layout_constraintTop_toTopOf="@id/llWeight">
+
+        <TextView
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_calendar_text_height"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_icon_calendar_size" />
+
+        <ImageView
+            android:layout_width="@dimen/icon_calendar_dialog_height"
+            android:layout_height="@dimen/icon_calendar_dialog_height"
+            android:src="@drawable/ic_calendar_height" />
+
+        <TextView
+            android:id="@+id/tvHeight"
+            style="@style/title_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_calendar_text_value_height"
+            android:textColor="@color/light_blue"
+            android:textSize="@dimen/text_icon_calendar_size" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

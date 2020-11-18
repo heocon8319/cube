@@ -18,6 +18,7 @@ import com.brickmate.cube.ui.custom.singlerowcalendar.selection.CalendarSelectio
 import com.brickmate.cube.ui.custom.singlerowcalendar.utils.DateUtils
 import com.brickmate.cube.ui.main.adapter.TodayMealAdapter
 import com.brickmate.cube.ui.main.view.dialog.TodayMeasureHistoryDialog
+import com.brickmate.cube.ui.main.view.dialog.TodaySummaryCalendarDialog
 import com.brickmate.cube.utils.TAG
 import com.brickmate.cube.utils.toast
 import com.github.mikephil.charting.data.RadarData
@@ -52,6 +53,7 @@ class TodayFragment : BaseFragment() {
 
     private val calendar = Calendar.getInstance()
     private var currentMonth = 0
+    private var dateSelected = Date()
 
     private val scores = SparseIntArray(5)
     private val entries: ArrayList<RadarEntry> = ArrayList()
@@ -122,11 +124,13 @@ class TodayFragment : BaseFragment() {
         val rowCalendarChangesObserver = object :
             CalendarChangesObserver {
             override fun whenSelectionChanged(isSelected: Boolean, position: Int, date: Date) {
+                dateSelected = date
                 clRowCalendar.tvMonth.text = DateUtils.getMonthNumber(date)
                 super.whenSelectionChanged(isSelected, position, date)
             }
 
             override fun whenWeekMonthYearChanged(weekNumber: String, monthNumber: String, monthName: String, year: String, date: Date) {
+                dateSelected = date
                 clRowCalendar.tvMonth.text = DateUtils.getMonthNumber(date)
                 super.whenWeekMonthYearChanged(weekNumber, monthNumber, monthName, year, date)
             }
@@ -280,6 +284,9 @@ class TodayFragment : BaseFragment() {
         clRowCalendar.tvMonth.setOnClickListener {
             //show dialog calendar
 
+            val fragDes = TodaySummaryCalendarDialog.newInstance()
+            fragDes.setCalendar(dateSelected)
+            fragDes.show(activity.supportFragmentManager, fragDes.TAG())
         }
         clTodayGraph.mChart.setOnClickListener {
             val fragDes = TodayNutriSummaryFragment.newInstance()

@@ -192,17 +192,6 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/clSection3" />
 
-            <com.brickmate.cube.ui.custom.customcalendar.CalendarView
-                android:id="@+id/cvCustomCalendar"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/custom_calendar_height"
-                android:layout_marginHorizontal="@dimen/margin_large"
-                android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@id/vBottom"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clSection3" />
-
             <View
                 android:id="@+id/vBottom"
                 android:layout_width="wrap_content"

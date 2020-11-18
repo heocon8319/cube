@@ -130,4 +130,10 @@ object DateUtils {
         return if (includeCurrentDate) pastList + cal.time + futureList else pastList + futureList
     }
 
+    fun toCalendar(date: Date?): Calendar? {
+        val cal = Calendar.getInstance()
+        cal.time = date
+        return cal
+    }
+
 }

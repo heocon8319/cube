@@ -8,8 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/margin_normal"
-        android:paddingVertical="@dimen/margin_small">
+        android:paddingHorizontal="@dimen/margin_normal">
 
         <!-- prev button -->
         <ImageView
@@ -129,6 +128,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:layout_marginTop="@dimen/margin_normal"
         android:numColumns="7" />
 </LinearLayout>

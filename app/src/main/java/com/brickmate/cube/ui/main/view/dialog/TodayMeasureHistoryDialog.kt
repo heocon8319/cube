@@ -15,6 +15,7 @@ import com.brickmate.cube.ui.main.view.TodayMeasureHistoryFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import kotlinx.android.synthetic.main.dialog_today_measure_history.*
+import java.util.*
 
 
 class TodayMeasureHistoryDialog : DialogFragment() {
@@ -52,7 +53,7 @@ class TodayMeasureHistoryDialog : DialogFragment() {
         params.width = ViewGroup.LayoutParams.WRAP_CONTENT
         params.height = ViewGroup.LayoutParams.WRAP_CONTENT
         dialog!!.window!!.attributes = params as WindowManager.LayoutParams
-        dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+        dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
     private fun initListener(adapter: TodayMeasureHistoryAdapter) {
@@ -69,6 +70,10 @@ class TodayMeasureHistoryDialog : DialogFragment() {
 
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+
+        ivArrowBack.setOnClickListener {
+            dismiss()
+        }
     }
 
     companion object {
