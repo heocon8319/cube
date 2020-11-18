@@ -37,6 +37,7 @@
     <dimen name="header_date_height">40dp</dimen>
     <dimen name="custom_calendar_height">450dp</dimen>
     <dimen name="dialog_max_height">600dp</dimen>
+    <dimen name="dialog_min_tab_width">300dp</dimen>
     <dimen name="dialog_max_width">300dp</dimen>
     <dimen name="dialog_radius">30dp</dimen>
     <dimen name="top_dialog_height">50dp</dimen>
