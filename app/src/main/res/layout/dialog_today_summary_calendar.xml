@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_dialog"
-    android:paddingBottom="@dimen/margin_normal"
-    android:maxHeight="@dimen/dialog_max_height">
+    android:maxHeight="@dimen/dialog_max_height"
+    android:paddingBottom="@dimen/margin_normal">
 
     <View
         android:id="@+id/clTop"
@@ -15,6 +15,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vTop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_img_dialog"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clTop"
+        app:layout_constraintWidth_percent="0.85" />
+
 
     <TextView
         android:id="@+id/tvClose"
@@ -68,7 +79,6 @@
             style="@style/title_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dialog_calendar_text_nutrition"
             android:textColor="@color/light_blue"
             android:textSize="@dimen/text_icon_calendar_size" />
     </LinearLayout>
@@ -102,7 +112,6 @@
             style="@style/title_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dialog_calendar_text_value_weight"
             android:textColor="@color/light_blue"
             android:textSize="@dimen/text_icon_calendar_size" />
     </LinearLayout>
@@ -136,7 +145,6 @@
             style="@style/title_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dialog_calendar_text_value_height"
             android:textColor="@color/light_blue"
             android:textSize="@dimen/text_icon_calendar_size" />
     </LinearLayout>

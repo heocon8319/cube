@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.brickmate.cube.R
 import kotlinx.android.synthetic.main.layout_custom_calendar.view.*
 import kotlinx.android.synthetic.main.layout_item_custom_calendar.view.*
@@ -28,6 +30,7 @@ class CalendarView : LinearLayout {
 
     // list date is selected
     private var listSelected = ArrayList<Date>()
+    private var listUpdate = MutableLiveData<ArrayList<Date>>()
 
     constructor(context: Context?) : super(context) {}
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
@@ -41,6 +44,10 @@ class CalendarView : LinearLayout {
     fun setCalendar(calendar : Calendar){
         currentDate = calendar
         updateCalendar()
+    }
+
+    fun getListDateSelected() : MutableLiveData<ArrayList<Date>>{
+        return listUpdate
     }
 
     /**
@@ -71,14 +78,12 @@ class CalendarView : LinearLayout {
         btnNext?.setOnClickListener(OnClickListener {
             currentDate.add(Calendar.MONTH, 1)
             updateCalendar()
-            Log.d("viht", listSelected.toString())
         })
 
         // subtract one month and refresh UI
         btnBack?.setOnClickListener(OnClickListener {
             currentDate.add(Calendar.MONTH, -1)
             updateCalendar()
-            Log.d("viht", listSelected.toString())
         })
     }
 
@@ -147,6 +152,7 @@ class CalendarView : LinearLayout {
                 } else {
                     date?.let { it1 -> listSelected.remove(it1) }
                 }
+                listUpdate.value = listSelected
             }
 
             val currentMonth: Int = currentDate.get(Calendar.MONTH)

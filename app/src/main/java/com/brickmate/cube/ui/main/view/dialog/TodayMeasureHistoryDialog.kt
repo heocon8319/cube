@@ -14,7 +14,9 @@ import com.brickmate.cube.ui.main.adapter.TodayMeasureHistoryAdapter
 import com.brickmate.cube.ui.main.view.TodayMeasureHistoryFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import io.reactivex.subjects.BehaviorSubject
 import kotlinx.android.synthetic.main.dialog_today_measure_history.*
+import kotlinx.android.synthetic.main.fragment_today_measure_history.*
 import java.util.*
 
 
@@ -44,7 +46,8 @@ class TodayMeasureHistoryDialog : DialogFragment() {
         }
         adapter.onSelectedView(tlGraph, 0)
 
-        initListener(adapter)
+        initListenerTabLayout(adapter)
+        initListener()
     }
 
     override fun onResume() {
@@ -56,7 +59,7 @@ class TodayMeasureHistoryDialog : DialogFragment() {
         dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
-    private fun initListener(adapter: TodayMeasureHistoryAdapter) {
+    private fun initListenerTabLayout(adapter: TodayMeasureHistoryAdapter) {
         tlGraph.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 val customTab = tab.position
@@ -70,7 +73,9 @@ class TodayMeasureHistoryDialog : DialogFragment() {
 
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
+    }
 
+    private fun initListener(){
         ivArrowBack.setOnClickListener {
             dismiss()
         }

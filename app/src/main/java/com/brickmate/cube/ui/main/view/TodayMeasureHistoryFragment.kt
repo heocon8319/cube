@@ -15,7 +15,12 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import io.reactivex.subjects.BehaviorSubject
+import kotlinx.android.synthetic.main.dialog_today_measure_history.*
+import kotlinx.android.synthetic.main.dialog_today_summary_calendar.*
 import kotlinx.android.synthetic.main.fragment_today_measure_history.*
+import kotlinx.android.synthetic.main.fragment_today_measure_history.tvHeight
+import kotlinx.android.synthetic.main.fragment_today_measure_history.tvWeight
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,6 +34,11 @@ private const val TYPE_GRAPH = "TYPE_GRAPH"
 class TodayMeasureHistoryFragment : BaseFragment() {
     // TODO: Rename and change types of parameters
     private var typeGraph: Int? = 0
+    private var valueHeight: Float = 80.02f
+    private var valueWeight: Float = 12.35f
+    private var height: BehaviorSubject<Float> = BehaviorSubject.create()
+    private var weight: BehaviorSubject<Float> = BehaviorSubject.create()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +49,12 @@ class TodayMeasureHistoryFragment : BaseFragment() {
 
     override fun layoutId() = R.layout.fragment_today_measure_history
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initLineChartHeight()
         initLineChartWeight()
+        initListener()
     }
-
 
     private fun initLineChart(lineChart: LineChart, xAList: Array<String>, entries: ArrayList<Entry>, upLimit: Float, downLimit: Float) {
         val xAxis: XAxis = lineChart.xAxis
@@ -255,6 +264,37 @@ class TodayMeasureHistoryFragment : BaseFragment() {
         lineEntries.add(Entry(7f, 15.8f))
         lineEntries.add(Entry(8f, 16.6f))
         return lineEntries
+    }
+
+    private fun initListener() {
+        ivHeightAdd.setOnClickListener {
+            valueHeight += 0.01f
+            height.onNext(valueHeight)
+        }
+
+        ivHeightMinus.setOnClickListener {
+            valueHeight -= 0.01f
+            height.onNext(valueHeight)
+        }
+
+        ivWeightAdd.setOnClickListener {
+            valueWeight += 0.01f
+            weight.onNext(valueWeight)
+        }
+
+        ivWeightMinus.setOnClickListener {
+            valueWeight -= 0.01f
+            weight.onNext(valueWeight)
+        }
+
+        height.subscribe {
+            tvHeight.text = String.format(resources.getString(R.string.dialog_measure_history_text_value_height), it)
+        }
+
+        weight.subscribe {
+            tvWeight.text = String.format(resources.getString(R.string.dialog_measure_history_text_value_weight), it)
+        }
+
     }
 
     companion object {

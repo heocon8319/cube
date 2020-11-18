@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.MutableLiveData
 import com.brickmate.cube.R
 import com.brickmate.cube.ui.custom.singlerowcalendar.utils.DateUtils
 import kotlinx.android.synthetic.main.dialog_today_summary_calendar.*
+import kotlinx.android.synthetic.main.fragment_today.*
+import kotlinx.android.synthetic.main.layout_today_radar_graph.view.*
 import java.util.*
 
 class TodaySummaryCalendarDialog : DialogFragment() {
@@ -25,6 +28,11 @@ class TodaySummaryCalendarDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initListener()
+        val calendar = DateUtils.toCalendar(dateSelected)
+        calendar?.let { cvCustomCalendar.setCalendar(it) }
+
+        tvHeight.text = String.format(resources.getString(R.string.dialog_calendar_text_value_height), "+", 5f)
+        tvWeight.text = String.format(resources.getString(R.string.dialog_calendar_text_value_weight), "+", 0.8f)
     }
 
     override fun onResume() {
@@ -34,18 +42,19 @@ class TodaySummaryCalendarDialog : DialogFragment() {
         params.height = ViewGroup.LayoutParams.WRAP_CONTENT
         dialog!!.window!!.attributes = params as WindowManager.LayoutParams
         dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        val calendar = DateUtils.toCalendar(dateSelected)
-        calendar?.let { cvCustomCalendar.setCalendar(it) }
     }
 
-    private fun initListener(){
+    private fun initListener() {
         tvClose.setOnClickListener {
             dismiss()
         }
+
+        cvCustomCalendar.getListDateSelected().observe(this, { date ->
+            tvCountDay.text = date.size.toString()
+        })
     }
 
-    fun setCalendar(date: Date){
+    fun setCalendar(date: Date) {
         dateSelected = date
     }
 
