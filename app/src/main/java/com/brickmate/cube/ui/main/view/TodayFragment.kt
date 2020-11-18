@@ -283,10 +283,11 @@ class TodayFragment : BaseFragment() {
     private fun initListener() {
         clRowCalendar.tvMonth.setOnClickListener {
             //show dialog calendar
-
-            val fragDes = TodaySummaryCalendarDialog.newInstance()
-            fragDes.setCalendar(dateSelected)
-            fragDes.show(activity.supportFragmentManager, fragDes.TAG())
+//            val fragDes = TodaySummaryCalendarDialog.newInstance()
+//            fragDes.setCalendar(dateSelected)
+//            fragDes.show(activity.supportFragmentManager, fragDes.TAG())
+            val fragDes = AddMealBottleFragment.newInstance()
+            navigateToFragment(fragDes, fragDes.TAG())
         }
         clTodayGraph.mChart.setOnClickListener {
             val fragDes = TodayNutriSummaryFragment.newInstance()

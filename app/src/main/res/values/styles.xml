@@ -12,5 +12,4 @@
     <style name="title_medium">
         <item name="android:fontFamily">@font/notosanskr_medium</item>
     </style>
-
 </resources>

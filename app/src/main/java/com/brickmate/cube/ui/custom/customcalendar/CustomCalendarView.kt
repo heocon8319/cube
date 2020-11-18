@@ -63,7 +63,7 @@ class CalendarView : LinearLayout {
     }
 
     private fun loadDateFormat(attrs: AttributeSet?) {
-        val ta: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.CalendarView)
+        val ta: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomCalendarView)
         try {
             // try to load provided date format, and fallback to default otherwise
             dateFormat = ta.getString(R.styleable.CustomCalendarView_dateFormat)

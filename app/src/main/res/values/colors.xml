@@ -24,6 +24,7 @@
     <color name="background">#F6F6F6</color>
     <color name="bg_navigation_bar">#FFE7D0</color>
     <color name="tahiti_gold">#F0830A</color>
+    <color name="mabel">#D9F6FF</color>
     <color name="light_blue">#0083E2</color>
     <color name="light_gray">#CCCCCC</color>
 </resources>
