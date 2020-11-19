@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <declare-styleable name="SingleRowCalendar">
         <attr name="pastDaysCount" format="integer" />
         <attr name="futureDaysCount" format="integer" />
@@ -10,6 +11,7 @@
         <attr name="deselection" format="boolean" />
         <attr name="longPress" format="boolean" />
     </declare-styleable>
+
 
     <attr name="cropImageStyle" format="reference" />
     <declare-styleable name="CropImageView">
@@ -23,8 +25,35 @@
         </attr>
     </declare-styleable>
 
+
     <declare-styleable name="CustomCalendarView">
         <attr name="dateFormat" format="string"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="WaveView">
+        <attr name="above_wave_color" format="color"/>
+        <attr name="blow_wave_color" format="color"/>
+        <attr name="progress" format="integer"/>
+        <attr name="wave_length" format="enum">
+            <enum name="large" value="1"/>
+            <enum name="middle" value="2"/>
+            <enum name="little" value="3"/>
+        </attr>
+        <attr name="wave_height" format="enum">
+            <enum name="large" value="1"/>
+            <enum name="middle" value="2"/>
+            <enum name="little" value="3"/>
+        </attr>
+        <attr name="wave_hz" format="enum">
+            <enum name="fast" value="1"/>
+            <enum name="normal" value="2"/>
+            <enum name="slow" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="Themes">
+        <attr name="waveViewStyle" format="reference"/>
     </declare-styleable>
 
 </resources>

@@ -1,15 +1,12 @@
 package com.brickmate.cube.ui.main.view
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.fragment.app.Fragment
 import com.brickmate.cube.R
 import com.brickmate.cube.ui.base.BaseFragment
-import com.john.waveview.WaveView
 import kotlinx.android.synthetic.main.fragment_add_meal_bottle.*
 
 
@@ -38,23 +35,31 @@ class AddMealBottleFragment : BaseFragment() {
 
     override fun layoutId() = R.layout.fragment_add_meal_bottle
 
+    override fun onResume() {
+        super.onResume()
+        skMilk.progress = 30
+        wvMilk.setProgress(30)
+        wvMilk.invalidate()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        waveView.max = 100
+//        waveView.setWaveColor(resources.getColor(R.color.mabel))
+//        waveView.progress = 10
+//        waveView.setMode(MODE_DRAWABLE)
+        skMilk.progress = 30
+        wvMilk.setProgress(30)
+        wvMilk.invalidate()
         skMilk.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 wvMilk.setProgress(progress)
+//                waveView.progress = progress.toLong()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {}
             override fun onStopTrackingTouch(seekBar: SeekBar) {}
         })
-    }
-
-    override fun onResume() {
-        super.onResume()
-        wvMilk.setProgress(0)
-        wvMilk.wav
-        wvMilk.invalidate()
     }
 
     companion object {
