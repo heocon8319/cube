@@ -44,17 +44,10 @@ class AddMealBottleFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        waveView.max = 100
-//        waveView.setWaveColor(resources.getColor(R.color.mabel))
-//        waveView.progress = 10
-//        waveView.setMode(MODE_DRAWABLE)
-        skMilk.progress = 30
-        wvMilk.setProgress(30)
-        wvMilk.invalidate()
+        wvMilk.setHeightInit(resources.getDimensionPixelSize(R.dimen.milt_height))
         skMilk.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 wvMilk.setProgress(progress)
-//                waveView.progress = progress.toLong()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {}

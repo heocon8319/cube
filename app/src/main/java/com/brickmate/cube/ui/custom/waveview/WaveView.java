@@ -25,6 +25,7 @@ public class WaveView extends LinearLayout {
     private int mWaveHeight;
     private int mWaveMultiple;
     private int mWaveHz;
+    private int mHeight;
 
     private int mWaveToTop;
 
@@ -64,6 +65,11 @@ public class WaveView extends LinearLayout {
         setProgress(mProgress);
     }
 
+    public void setHeightInit(int heightInit) {
+        mHeight = heightInit;
+        computeWaveToTop();
+    }
+
     public void setProgress(int progress) {
         this.mProgress = progress > 100 ? 100 : progress;
         computeWaveToTop();
@@ -78,10 +84,10 @@ public class WaveView extends LinearLayout {
     }
 
     private void computeWaveToTop() {
-        mWaveToTop = (int) (getHeight() * (1f - mProgress / 100f));
+        mWaveToTop = (int) (mHeight * (1f - mProgress / 100f));
         ViewGroup.LayoutParams params = mWave.getLayoutParams();
         if (params != null) {
-            ((LayoutParams) params).topMargin = mWaveToTop;
+            ((LayoutParams) params).topMargin = (mWaveToTop);
         }
         mWave.setLayoutParams(params);
     }
