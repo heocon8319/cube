@@ -17,6 +17,7 @@ import com.brickmate.cube.ui.custom.singlerowcalendar.calendar.SingleRowCalendar
 import com.brickmate.cube.ui.custom.singlerowcalendar.selection.CalendarSelectionManager
 import com.brickmate.cube.ui.custom.singlerowcalendar.utils.DateUtils
 import com.brickmate.cube.ui.main.adapter.TodayMealAdapter
+import com.brickmate.cube.ui.main.view.dialog.TodayEditMealDialog
 import com.brickmate.cube.ui.main.view.dialog.TodayMeasureHistoryDialog
 import com.brickmate.cube.ui.main.view.dialog.TodaySummaryCalendarDialog
 import com.brickmate.cube.utils.TAG
@@ -160,6 +161,7 @@ class TodayFragment : BaseFragment() {
                 true,
                 50,
                 "",
+                "Soup carrot",
                 arrayListOf<String>("carrot", "tomato", "potato", "beef")
             )
         )
@@ -168,6 +170,7 @@ class TodayFragment : BaseFragment() {
                 false,
                 0,
                 "3 PM",
+                "Milk",
                 arrayListOf<String>("Lactose", "Canxi", "Maltodextrin")
             )
         )
@@ -176,6 +179,7 @@ class TodayFragment : BaseFragment() {
                 true,
                 0,
                 "7 AM",
+                "Soup potato",
                 arrayListOf<String>("Fish", "sweet potato")
             )
         )
@@ -184,6 +188,7 @@ class TodayFragment : BaseFragment() {
                 false,
                 75,
                 "",
+                "Milk",
                 arrayListOf<String>("Lactose", "Magie Clorua")
             )
         )
@@ -195,7 +200,9 @@ class TodayFragment : BaseFragment() {
             toast(it)
         }
         adapter.onItemClick = {
-            toast(it.getIngredientString())
+            val fragDes = TodayEditMealDialog.newInstance()
+            fragDes.setMeal(it)
+            fragDes.show(activity.supportFragmentManager, fragDes.TAG())
         }
         rvTodayDiet.adapter = adapter
     }
@@ -283,11 +290,11 @@ class TodayFragment : BaseFragment() {
     private fun initListener() {
         clRowCalendar.tvMonth.setOnClickListener {
             //show dialog calendar
-//            val fragDes = TodaySummaryCalendarDialog.newInstance()
-//            fragDes.setCalendar(dateSelected)
-//            fragDes.show(activity.supportFragmentManager, fragDes.TAG())
-            val fragDes = AddMealBottleFragment.newInstance()
-            navigateToFragment(fragDes, fragDes.TAG())
+            val fragDes = TodaySummaryCalendarDialog.newInstance()
+            fragDes.setCalendar(dateSelected)
+            fragDes.show(activity.supportFragmentManager, fragDes.TAG())
+//            val fragDes = AddMealBottleFragment.newInstance()
+//            navigateToFragment(fragDes, fragDes.TAG())
         }
         clTodayGraph.mChart.setOnClickListener {
             val fragDes = TodayNutriSummaryFragment.newInstance()

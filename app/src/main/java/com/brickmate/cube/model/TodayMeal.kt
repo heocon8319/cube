@@ -10,6 +10,7 @@ data class TodayMeal(
     var isMeal: Boolean = true,
     var capacity: Int = 0,
     var time: String = "",
+    var name: String = "",
     var ingredients: ArrayList<String>? = null
 ) : Parcelable {
 

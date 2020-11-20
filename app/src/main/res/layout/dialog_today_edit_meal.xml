@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:maxHeight="@dimen/dialog_max_height">
+
+    <View
+        android:id="@+id/clTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_dialog_height"
+        android:background="@drawable/bg_top_dialog"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/title_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_small_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ncvIngredient"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clTop"
+        app:layout_constraintWidth_percent="0.9">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBackground"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_edit_meal_height"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/margin_normal"
+                android:elevation="@dimen/margin_small"
+                app:cardCornerRadius="@dimen/card_view_radius"
+                app:layout_constraintHeight_percent="0.5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clToday"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_default_item_meal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:background="@drawable/bg_today_title_meal"
+                        android:gravity="center"
+                        app:layout_constraintHeight_percent="0.25"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.5">
+
+                        <TextView
+                            style="@style/title_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_tiny"
+                            android:text="@string/dialog_edit_meal_text_food"
+                            android:textAlignment="center"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTodayIngredient"
+                        style="@style/title_medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:text="소고기 양배추 죽"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/title_section_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintWidth_percent="0.5" />
+
+                    <TextView
+                        android:id="@+id/tvTodayCalorie"
+                        style="@style/title_medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:text="소고기 양배추 죽"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/title_section_size"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintWidth_percent="0.5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/ivSection1"
+                android:layout_width="@dimen/icon_edit_meal"
+                android:layout_height="@dimen/icon_edit_meal"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:src="@drawable/ic_spatula"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvBackground" />
+
+            <TextView
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/dialog_edit_meal_text_material"
+                android:textColor="@color/jungle_green"
+                android:textSize="@dimen/title_section_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivSection1"
+                app:layout_constraintLeft_toRightOf="@id/ivSection1"
+                app:layout_constraintTop_toTopOf="@id/ivSection1" />
+
+            <Spinner
+                android:id="@+id/snTodayAsh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="@id/ivSection1"
+                app:layout_constraintRight_toLeftOf="@id/tvSection1"
+                app:layout_constraintTop_toTopOf="@id/ivSection1" />
+
+            <TextView
+                android:id="@+id/tvSection1"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/dialog_edit_meal_text_ash"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_section_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivSection1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivSection1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTodayIngredient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivSection1" />
+
+            <ImageView
+                android:id="@+id/ivSection2"
+                android:layout_width="@dimen/icon_edit_meal"
+                android:layout_height="@dimen/icon_edit_meal"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:src="@drawable/ic_question"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvTodayIngredient" />
+
+            <TextView
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:text="@string/dialog_edit_meal_text_prepare_material"
+                android:textColor="@color/jungle_green"
+                android:textSize="@dimen/title_section_size"
+                app:layout_constraintBottom_toBottomOf="@id/ivSection2"
+                app:layout_constraintLeft_toRightOf="@id/ivSection2"
+                app:layout_constraintTop_toTopOf="@id/ivSection2" />
+
+            <TextView
+                android:id="@+id/tvTip"
+                style="@style/title_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/screen_nutrition_summary_text_nutri_intake"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_edit_meal_size"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivSection2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

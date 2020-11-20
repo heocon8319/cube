@@ -13,7 +13,7 @@
         android:id="@+id/clToday"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_today_meal">
+        android:background="@drawable/bg_default_item_meal">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clTodayML"
@@ -49,11 +49,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="@dimen/margin_small"
             android:background="@drawable/bg_today_title_meal"
             android:gravity="center"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintWidth_percent="0.4"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -61,6 +63,7 @@
                 style="@style/title_medium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:layout_marginBottom="@dimen/margin_tiny"
                 android:text="@string/screen_today_text_ingredient"
                 android:textColor="@color/white" />

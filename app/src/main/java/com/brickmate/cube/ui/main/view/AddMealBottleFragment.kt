@@ -44,7 +44,7 @@ class AddMealBottleFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        wvMilk.setHeightInit(resources.getDimensionPixelSize(R.dimen.milt_height))
+        wvMilk.setHeightInit(resources.getDimensionPixelSize(R.dimen.milk_height))
         skMilk.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 wvMilk.setProgress(progress)
