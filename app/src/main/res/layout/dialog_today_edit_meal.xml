@@ -89,7 +89,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/margin_small"
-                        android:text="소고기 양배추 죽"
                         android:textAlignment="textStart"
                         android:textColor="@color/white"
                         android:textSize="@dimen/title_section_size"
@@ -103,7 +102,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/margin_small"
-                        android:text="소고기 양배추 죽"
+                        android:text="120 kcal/AAA"
                         android:textAlignment="textEnd"
                         android:textColor="@color/white"
                         android:textSize="@dimen/title_section_size"
@@ -137,21 +136,28 @@
                 app:layout_constraintLeft_toRightOf="@id/ivSection1"
                 app:layout_constraintTop_toTopOf="@id/ivSection1" />
 
-            <Spinner
-                android:id="@+id/snTodayAsh"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:spinnerMode="dropdown"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@drawable/bg_custom_spinner"
                 app:layout_constraintBottom_toBottomOf="@id/ivSection1"
                 app:layout_constraintRight_toLeftOf="@id/tvSection1"
-                app:layout_constraintTop_toTopOf="@id/ivSection1" />
+                app:layout_constraintTop_toTopOf="@id/ivSection1">
+
+                <Spinner
+                    android:id="@+id/snTodayAsh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/margin_small" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tvSection1"
                 style="@style/title_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
                 android:text="@string/dialog_edit_meal_text_ash"
                 android:textColor="@color/black"
                 android:textSize="@dimen/title_section_size"

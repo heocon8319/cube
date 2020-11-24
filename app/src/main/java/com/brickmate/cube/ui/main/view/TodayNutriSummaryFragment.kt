@@ -108,6 +108,8 @@ class TodayNutriSummaryFragment : BaseFragment() {
         bcVitamin.data = barData
         bcVitamin.legend.isEnabled = false
         bcVitamin.description.isEnabled = false
+        bcVitamin.setTouchEnabled(false)
+        bcVitamin.isEnabled = false
         bcVitamin.setFitBars(true)
         bcVitamin.invalidate()
     }
@@ -156,6 +158,8 @@ class TodayNutriSummaryFragment : BaseFragment() {
         bcMineral.data = barData
         bcMineral.legend.isEnabled = false
         bcMineral.description.isEnabled = false
+        bcMineral.setTouchEnabled(false)
+        bcMineral.isEnabled = false
         bcMineral.setFitBars(true)
         bcMineral.invalidate()
     }

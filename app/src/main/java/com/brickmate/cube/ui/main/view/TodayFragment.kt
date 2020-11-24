@@ -197,7 +197,8 @@ class TodayFragment : BaseFragment() {
         rvTodayDiet.setHasFixedSize(true)
         var adapter = TodayMealAdapter(dummy)
         adapter.onImageMLClick = {
-            toast(it)
+            val fragDes = AddMealBottleFragment.newInstance()
+            navigateToFragment(fragDes, fragDes.TAG())
         }
         adapter.onItemClick = {
             val fragDes = TodayEditMealDialog.newInstance()
@@ -263,6 +264,8 @@ class TodayFragment : BaseFragment() {
         dataSets.add(dataSet)
         val data = RadarData(dataSets)
         data.setValueTextSize(8f)
+        clTodayGraph.mChart.setTouchEnabled(false)
+        clTodayGraph.mChart.isRotationEnabled = false
         clTodayGraph.mChart!!.data = data
         clTodayGraph.mChart.invalidate()
     }
@@ -293,8 +296,6 @@ class TodayFragment : BaseFragment() {
             val fragDes = TodaySummaryCalendarDialog.newInstance()
             fragDes.setCalendar(dateSelected)
             fragDes.show(activity.supportFragmentManager, fragDes.TAG())
-//            val fragDes = AddMealBottleFragment.newInstance()
-//            navigateToFragment(fragDes, fragDes.TAG())
         }
         clTodayGraph.mChart.setOnClickListener {
             val fragDes = TodayNutriSummaryFragment.newInstance()
