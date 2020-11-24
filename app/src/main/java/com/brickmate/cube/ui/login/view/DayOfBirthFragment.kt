@@ -48,7 +48,7 @@ class DayOfBirthFragment : BaseFragment() {
         ) { view, year, month, day ->
             val month = month + 1
             val msg = "You Selected: $day/$month/$year"
-            toast(msg)
+//            toast(msg)
         }
         val now = System.currentTimeMillis() - 1000
         dpDOB.maxDate = now
